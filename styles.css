@@ -1,0 +1,450 @@
+/* =========================================================
+   Portfolio — hoja de estilos única
+   Paleta: papel gris cálido, tinta, magenta y azul de proceso
+   ========================================================= */
+
+:root {
+  --paper: #e4e5e1;
+  --paper-deep: #d5d7d1;
+  --ink: #1b1c1e;
+  --ink-soft: #5c5f61;
+  --magenta: #e4007c;
+  --blue: #1b3fcb;
+  --yellow: #ffc800;
+
+  --gap: clamp(1rem, 2.2vw, 2rem);
+  --pad: clamp(1.25rem, 5vw, 4.5rem);
+  --rule: 1px solid rgba(27, 28, 30, 0.22);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+  line-height: 1.55;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: "Syne", "Archivo", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 1.1em; max-width: 62ch; }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.saltar {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1rem;
+  z-index: 50;
+}
+.saltar:focus { left: 0; }
+
+/* ---------- Portada ------------------------------------ */
+
+.portada {
+  background: var(--magenta);
+  color: var(--paper);
+  padding: clamp(1.25rem, 4vw, 2.5rem) var(--pad) clamp(2.5rem, 6vw, 4.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Marcas de registro: el detalle de imprenta, usado una sola vez */
+.registro {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.registro--a { top: 14px; right: 16px; }
+.registro--b { bottom: 14px; left: 16px; }
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(228, 229, 225, 0.4);
+  padding-bottom: 1rem;
+  margin-bottom: clamp(3rem, 12vh, 8rem);
+}
+
+.marca {
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.barra nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  font-size: 0.9375rem;
+}
+
+.barra nav a {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.barra nav a:hover { border-bottom-color: currentColor; }
+
+.portada__nombre {
+  font-size: clamp(3.25rem, 13vw, 10.5rem);
+  line-height: 0.84;
+  letter-spacing: -0.045em;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.portada__nombre span {
+  display: block;
+  overflow: hidden;
+}
+.portada__nombre span > i {
+  display: block;
+  font-style: normal;
+  animation: subir 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.portada__nombre span:nth-child(2) > i { animation-delay: 0.08s; }
+
+@keyframes subir {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.portada__pie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+@media (min-width: 800px) {
+  .portada__pie { grid-template-columns: minmax(0, 1fr) auto; }
+}
+
+.portada__pie p {
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  max-width: 34ch;
+  margin: 0;
+}
+
+/* Índice de proyectos dentro de la portada */
+.indice {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  min-width: min(100%, 22rem);
+}
+.indice li { border-top: 1px solid rgba(228, 229, 225, 0.4); }
+.indice li:last-child { border-bottom: 1px solid rgba(228, 229, 225, 0.4); }
+.indice a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  text-decoration: none;
+}
+.indice a:hover { color: var(--yellow); }
+.indice em { font-style: normal; opacity: 0.75; font-variant-numeric: tabular-nums; }
+
+/* ---------- Estructura general ------------------------- */
+
+.seccion {
+  padding: clamp(3.5rem, 9vw, 7rem) var(--pad);
+}
+
+.seccion--linea { border-top: var(--rule); }
+
+.seccion__titulo {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* ---------- Rejilla de proyectos ----------------------- */
+
+.trabajos {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem) var(--gap);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.proyecto { grid-column: 1 / -1; }
+
+@media (min-width: 780px) {
+  .proyecto--ancho    { grid-column: 1 / span 9; }
+  .proyecto--medio    { grid-column: 1 / span 6; }
+  .proyecto--medio-b  { grid-column: 8 / span 5; margin-top: 5rem; }
+  .proyecto--corto    { grid-column: 4 / span 5; }
+  .proyecto--alto     { grid-column: 10 / span 3; margin-top: -3rem; }
+}
+
+.proyecto a {
+  text-decoration: none;
+  display: block;
+}
+
+.proyecto__portada {
+  background: var(--paper-deep);
+  border: 1px solid rgba(27, 28, 30, 0.14);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.proyecto--alto .proyecto__portada { aspect-ratio: 3 / 4; }
+.proyecto__portada svg { width: 100%; height: 100%; display: block; }
+
+.proyecto a:hover .proyecto__portada,
+.proyecto a:focus-visible .proyecto__portada { background: var(--yellow); }
+
+.proyecto__titulo {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  margin: 1rem 0 0.35rem;
+}
+.proyecto a:hover .proyecto__titulo { color: var(--magenta); }
+
+.proyecto__meta {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---------- Sobre mí ----------------------------------- */
+
+.sobre {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .sobre { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+}
+
+.sobre__texto p:first-child {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.35;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+
+.datos { margin: 0; font-size: 0.9375rem; }
+.datos dt {
+  border-top: var(--rule);
+  padding-top: 0.5rem;
+  margin-top: 0.9rem;
+  font-weight: 500;
+}
+.datos dd { margin: 0.15rem 0 0; color: var(--ink-soft); }
+
+/* ---------- Contacto ----------------------------------- */
+
+.contacto {
+  background: var(--blue);
+  color: var(--paper);
+}
+.contacto .seccion__titulo { max-width: 16ch; }
+
+.correo {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 5.5vw, 3.5rem);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  border-bottom: 3px solid rgba(228, 229, 225, 0.45);
+  display: inline-block;
+  word-break: break-word;
+}
+.correo:hover { border-bottom-color: var(--yellow); color: var(--yellow); }
+
+.redes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 2.5rem 0 0;
+  font-size: 0.9375rem;
+}
+.redes a { text-decoration: none; border-bottom: 1px solid currentColor; }
+
+/* ---------- Pie ---------------------------------------- */
+
+.pie {
+  padding: 1.75rem var(--pad);
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: space-between;
+  border-top: var(--rule);
+}
+
+/* ---------- Página de caso ----------------------------- */
+
+.cabecera-caso {
+  padding: clamp(1.25rem, 4vw, 2.5rem) var(--pad) 0;
+}
+.cabecera-caso .barra {
+  border-bottom-color: rgba(27, 28, 30, 0.22);
+  margin-bottom: clamp(2.5rem, 7vw, 5rem);
+}
+
+.caso__titulo {
+  font-size: clamp(2.5rem, 9vw, 6.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  padding: 0 var(--pad);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.caso__entrada {
+  padding: 0 var(--pad) clamp(2.5rem, 6vw, 4rem);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .caso__entrada { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+}
+.caso__entrada .destacado {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.4;
+}
+
+.ficha {
+  margin: 0;
+  font-size: 0.875rem;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  align-content: start;
+}
+.ficha dt {
+  border-top: var(--rule);
+  padding: 0.5rem 0;
+  color: var(--ink-soft);
+}
+.ficha dd {
+  border-top: var(--rule);
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.lienzo {
+  padding: 0 var(--pad) clamp(3rem, 7vw, 5rem);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.pieza { grid-column: 1 / -1; }
+@media (min-width: 780px) {
+  .pieza--mitad { grid-column: span 6; }
+  .pieza--tercio { grid-column: span 4; }
+  .pieza--centro { grid-column: 3 / span 8; }
+}
+
+/* Hueco para tus imágenes reales: sustituye el div por un <img> */
+.hueco {
+  background: var(--paper-deep);
+  border: 1px dashed rgba(27, 28, 30, 0.35);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  text-align: center;
+  padding: 1rem;
+}
+.hueco--vertical { aspect-ratio: 3 / 4; }
+.hueco--panoramica { aspect-ratio: 21 / 9; }
+
+.pieza figcaption {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+  max-width: 48ch;
+}
+
+.cita {
+  margin: 0;
+  padding: clamp(3rem, 7vw, 5rem) var(--pad);
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+}
+.cita blockquote {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+}
+.cita figcaption {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.siguiente {
+  padding: clamp(3rem, 7vw, 5rem) var(--pad);
+  display: block;
+  text-decoration: none;
+}
+.siguiente small {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.siguiente strong {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.siguiente:hover strong { color: var(--magenta); }
+
+/* ---------- Accesibilidad ------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
