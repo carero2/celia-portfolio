@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- CAMBIAR: título, descripción y URL cuando tengas el dominio -->
+<!-- CAMBIAR: descripción y dominio -->
 <title>Celia Muntaner — Dirección de arte</title>
-<meta name="description" content="Dirección de arte para marcas: identidad, packaging y campañas. Portfolio de proyectos seleccionados.">
+<meta name="description" content="Dirección de arte para marcas: identidad, packaging y campaña. Del concepto a la imprenta.">
 <link rel="canonical" href="https://ejemplo.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Celia Muntaner — Dirección de arte">
-<meta property="og:description" content="Identidad, packaging y campañas para marcas.">
+<meta property="og:description" content="Identidad, packaging y campaña. Del concepto a la imprenta.">
 <meta property="og:image" content="https://ejemplo.com/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -26,201 +26,365 @@
 
 <a class="saltar" href="#trabajo">Ir a los proyectos</a>
 
+<!-- Portadas de proyecto. Se dibujan una vez y se reutilizan en el
+     mosaico, el desfile y el índice. Cuando tengas fotos reales,
+     borra este bloque y usa <img> en su lugar. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="p-sal" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#1b3fcb"/>
+    <g stroke="#e4e5e1" stroke-width="2.5" fill="none" opacity="0.85">
+      <path d="M0 320 Q 100 296 200 320 T 400 320"/>
+      <path d="M0 344 Q 100 320 200 344 T 400 344"/>
+      <path d="M0 368 Q 100 344 200 368 T 400 368"/>
+      <path d="M0 392 Q 100 368 200 392 T 400 392"/>
+      <path d="M0 416 Q 100 392 200 416 T 400 416"/>
+      <path d="M0 440 Q 100 416 200 440 T 400 440"/>
+      <path d="M0 464 Q 100 440 200 464 T 400 464"/>
+    </g>
+    <circle cx="200" cy="180" r="72" fill="#ffc800"/>
+    <rect x="194" y="0" width="12" height="96" fill="#e4007c"/>
+  </symbol>
+
+  <symbol id="p-nocturna" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#1b1c1e"/>
+    <g fill="none" stroke="#e4007c" stroke-width="3.5">
+      <circle cx="200" cy="250" r="42"/>
+      <circle cx="200" cy="250" r="86"/>
+      <circle cx="200" cy="250" r="130"/>
+      <circle cx="200" cy="250" r="174"/>
+    </g>
+    <path d="M0 250h400" stroke="#ffc800" stroke-width="3.5"/>
+    <circle cx="200" cy="250" r="13" fill="#ffc800"/>
+  </symbol>
+
+  <symbol id="p-bruma" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#e4e5e1"/>
+    <g style="mix-blend-mode:multiply">
+      <circle cx="150" cy="230" r="108" fill="#1b3fcb" opacity="0.88"/>
+      <circle cx="250" cy="300" r="108" fill="#e4007c" opacity="0.88"/>
+    </g>
+    <rect x="0" y="456" width="400" height="44" fill="#1b1c1e"/>
+  </symbol>
+
+  <symbol id="p-casa" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#ffc800"/>
+    <g fill="#1b1c1e">
+      <rect x="40"  y="80"  width="60" height="60"/>
+      <rect x="124" y="80"  width="60" height="60"/>
+      <rect x="292" y="80"  width="60" height="60"/>
+      <rect x="40"  y="164" width="60" height="60"/>
+      <rect x="208" y="164" width="60" height="60"/>
+      <rect x="292" y="164" width="60" height="60"/>
+      <rect x="124" y="248" width="60" height="60"/>
+      <rect x="208" y="248" width="60" height="60"/>
+      <rect x="40"  y="332" width="60" height="60"/>
+      <rect x="292" y="332" width="60" height="60"/>
+    </g>
+    <rect x="208" y="80" width="60" height="60" fill="#e4007c"/>
+  </symbol>
+
+  <symbol id="p-turno" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#e4007c"/>
+    <g fill="#e4e5e1">
+      <rect x="48" y="150" width="240" height="40" rx="20"/>
+      <rect x="48" y="212" width="168" height="40" rx="20"/>
+      <rect x="48" y="274" width="288" height="40" rx="20"/>
+    </g>
+    <circle cx="320" cy="232" r="26" fill="#1b3fcb"/>
+  </symbol>
+
+  <symbol id="p-ronda" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#e4e5e1"/>
+    <circle cx="200" cy="250" r="140" fill="none" stroke="#e4007c" stroke-width="44"/>
+    <g fill="#1b1c1e">
+      <rect x="60" y="236" width="280" height="12"/>
+      <rect x="60" y="266" width="180" height="12"/>
+    </g>
+    <rect x="0" y="0" width="400" height="34" fill="#1b3fcb"/>
+  </symbol>
+
+  <symbol id="p-tramas" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#1b1c1e"/>
+    <g fill="#ffc800">
+      <rect x="0" y="60"  width="400" height="26"/>
+      <rect x="0" y="140" width="280" height="26"/>
+      <rect x="0" y="220" width="360" height="26"/>
+      <rect x="0" y="300" width="180" height="26"/>
+      <rect x="0" y="380" width="320" height="26"/>
+    </g>
+    <circle cx="330" cy="410" r="46" fill="#e4007c"/>
+  </symbol>
+
+  <symbol id="p-prueba" viewBox="0 0 400 500">
+    <rect width="400" height="500" fill="#1b3fcb"/>
+    <g fill="#e4e5e1">
+      <circle cx="120" cy="150" r="56"/>
+      <circle cx="280" cy="150" r="56"/>
+      <circle cx="120" cy="330" r="56"/>
+    </g>
+    <circle cx="280" cy="330" r="56" fill="#ffc800"/>
+  </symbol>
+</svg>
+
+<!-- ==========  1 · PORTADA  ========================== -->
 <header class="portada">
-  <svg class="registro registro--a" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-    <circle cx="20" cy="20" r="9"/><path d="M20 0v40M0 20h40"/>
-  </svg>
-  <svg class="registro registro--b" viewBox="0 0 40 40" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
-    <circle cx="20" cy="20" r="9"/><path d="M20 0v40M0 20h40"/>
-  </svg>
 
-  <div class="barra">
-    <a class="marca" href="/">MF</a>
-    <nav aria-label="Principal">
-      <a href="#trabajo">Trabajo</a>
-      <a href="#sobre">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <!-- VÍDEO DE PORTADA
+       Sustituye este <div> por:
+       <video class="portada__media" autoplay muted loop playsinline
+              preload="metadata" poster="img/portada.webp">
+         <source src="img/portada.webm" type="video/webm">
+         <source src="img/portada.mp4"  type="video/mp4">
+       </video>
+       Bucle corto, sin audio, máximo 1280 px de ancho y 2 MB. -->
+  <div class="portada__media" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <rect width="1600" height="900" fill="#1b3fcb"/>
+      <circle cx="1180" cy="300" r="260" fill="#e4007c"/>
+      <circle cx="480" cy="640" r="200" fill="#ffc800"/>
+      <g stroke="#e4e5e1" stroke-width="3" fill="none" opacity="0.5">
+        <path d="M0 720 Q 400 660 800 720 T 1600 720"/>
+        <path d="M0 780 Q 400 720 800 780 T 1600 780"/>
+        <path d="M0 840 Q 400 780 800 840 T 1600 840"/>
+      </g>
+    </svg>
   </div>
 
-  <h1 class="portada__nombre">
-    <span><i>Celia</i></span>
-    <span><i>Muntaner</i></span>
-  </h1>
-
-  <div class="portada__pie">
-    <p>Directora de arte. Construyo sistemas visuales que aguantan de la estantería al feed.</p>
-
-    <ol class="indice">
-      <li><a href="proyecto-sal-de-garraf.html">Sal de Garraf <em>2025</em></a></li>
-      <li><a href="proyecto-sal-de-garraf.html">Nocturna 24 <em>2024</em></a></li>
-      <li><a href="proyecto-sal-de-garraf.html">Bruma <em>2024</em></a></li>
-      <li><a href="proyecto-sal-de-garraf.html">Casa Común <em>2023</em></a></li>
-      <li><a href="proyecto-sal-de-garraf.html">Turno <em>2023</em></a></li>
-    </ol>
+  <div class="portada__barra">
+    <p class="portada__lema">Dirección de arte para marcas que necesitan verse antes de explicarse.</p>
+    <a class="portada__enlace" href="#trabajo">/Trabajo</a>
   </div>
+
+  <h1 class="portada__nombre">celia muntaner</h1>
 </header>
 
-<main id="trabajo">
+<main>
 
-  <section class="seccion">
-    <h2 class="seccion__titulo">Proyectos seleccionados</h2>
+  <!-- ==========  2 · MOSAICO  ========================= -->
+  <!-- Cada pieza muestra solo la imagen. Al pasar el ratón,
+       la imagen desaparece y queda el texto sobre el fondo. -->
+  <section class="mosaico" id="trabajo">
 
-    <div class="trabajos">
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Sal de Garraf"><use href="#p-sal"/></svg>
+          <span class="pieza__cliente">Sal de Garraf</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Sal de Garraf</h3>
+          <p class="pieza__tipo">Identidad y packaging · 2025</p>
+          <p class="pieza__reto"><b>El reto:</b> una salina familiar con noventa años de historia vendía a granel y sin nombre propio. Había que entrar en tienda gourmet sin parecer una marca recién inventada, y con un presupuesto que solo daba para dos tintas.</p>
+        </div>
+      </a>
+    </figure>
 
-      <!-- 1 -->
-      <article class="proyecto proyecto--ancho">
-        <a href="proyecto-sal-de-garraf.html">
-          <div class="proyecto__portada">
-            <svg viewBox="0 0 400 300" role="img" aria-label="Portada del proyecto Sal de Garraf">
-              <rect width="400" height="300" fill="#1b3fcb"/>
-              <g stroke="#e4e5e1" stroke-width="2" opacity="0.8">
-                <path d="M0 200 Q 100 178 200 200 T 400 200"/>
-                <path d="M0 216 Q 100 194 200 216 T 400 216"/>
-                <path d="M0 232 Q 100 210 200 232 T 400 232"/>
-                <path d="M0 248 Q 100 226 200 248 T 400 248"/>
-                <path d="M0 264 Q 100 242 200 264 T 400 264"/>
-                <path d="M0 280 Q 100 258 200 280 T 400 280"/>
-              </g>
-              <circle cx="200" cy="118" r="52" fill="#ffc800"/>
-              <rect x="196" y="0" width="8" height="66" fill="#e4007c"/>
-            </svg>
-          </div>
-          <h3 class="proyecto__titulo">Sal de Garraf</h3>
-          <p class="proyecto__meta">Identidad y packaging · 2025</p>
-        </a>
-      </article>
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Nocturna 24"><use href="#p-nocturna"/></svg>
+          <span class="pieza__cliente">Nocturna 24</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Nocturna 24</h3>
+          <p class="pieza__tipo">Sistema visual de festival · 2024</p>
+          <p class="pieza__reto"><b>El reto:</b> un festival que cambia de sede cada año necesitaba una identidad reconocible igual en un cartel de calle, en una pulsera de tela y en un story vertical, y que el equipo interno pudiera adaptar sin diseñador.</p>
+        </div>
+      </a>
+    </figure>
 
-      <!-- 2 -->
-      <article class="proyecto proyecto--alto">
-        <a href="proyecto-sal-de-garraf.html">
-          <div class="proyecto__portada">
-            <svg viewBox="0 0 300 400" role="img" aria-label="Portada del proyecto Nocturna 24">
-              <rect width="300" height="400" fill="#1b1c1e"/>
-              <g fill="none" stroke="#e4007c" stroke-width="3">
-                <circle cx="150" cy="200" r="30"/>
-                <circle cx="150" cy="200" r="62"/>
-                <circle cx="150" cy="200" r="94"/>
-                <circle cx="150" cy="200" r="126"/>
-              </g>
-              <path d="M0 200h300" stroke="#ffc800" stroke-width="3"/>
-              <circle cx="150" cy="200" r="10" fill="#ffc800"/>
-            </svg>
-          </div>
-          <h3 class="proyecto__titulo">Nocturna 24</h3>
-          <p class="proyecto__meta">Sistema visual de festival · 2024</p>
-        </a>
-      </article>
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Bruma"><use href="#p-bruma"/></svg>
+          <span class="pieza__cliente">Bruma</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Bruma</h3>
+          <p class="pieza__tipo">Campaña de lanzamiento · 2024</p>
+          <p class="pieza__reto"><b>El reto:</b> un café de especialidad entraba en un lineal donde todas las bolsas eran kraft y tipografía de máquina de escribir. La campaña tenía que funcionar en exterior y en Reels con la misma pieza gráfica.</p>
+        </div>
+      </a>
+    </figure>
 
-      <!-- 3 -->
-      <article class="proyecto proyecto--medio">
-        <a href="proyecto-sal-de-garraf.html">
-          <div class="proyecto__portada">
-            <svg viewBox="0 0 400 300" role="img" aria-label="Portada del proyecto Bruma">
-              <rect width="400" height="300" fill="#e4e5e1"/>
-              <g style="mix-blend-mode:multiply">
-                <circle cx="152" cy="150" r="86" fill="#1b3fcb" opacity="0.85"/>
-                <circle cx="248" cy="150" r="86" fill="#e4007c" opacity="0.85"/>
-              </g>
-              <rect x="0" y="272" width="400" height="28" fill="#1b1c1e"/>
-            </svg>
-          </div>
-          <h3 class="proyecto__titulo">Bruma</h3>
-          <p class="proyecto__meta">Campaña de lanzamiento · 2024</p>
-        </a>
-      </article>
+    <h2 class="corte">
+      <span>Que aguante</span>
+      <span>en la etiqueta</span>
+      <span>y en la lona</span>
+    </h2>
 
-      <!-- 4 -->
-      <article class="proyecto proyecto--medio-b">
-        <a href="proyecto-sal-de-garraf.html">
-          <div class="proyecto__portada">
-            <svg viewBox="0 0 400 300" role="img" aria-label="Portada del proyecto Casa Común">
-              <rect width="400" height="300" fill="#ffc800"/>
-              <g fill="#1b1c1e">
-                <rect x="40"  y="60"  width="52" height="52"/>
-                <rect x="112" y="60"  width="52" height="52"/>
-                <rect x="256" y="60"  width="52" height="52"/>
-                <rect x="40"  y="132" width="52" height="52"/>
-                <rect x="184" y="132" width="52" height="52"/>
-                <rect x="256" y="132" width="52" height="52"/>
-                <rect x="112" y="204" width="52" height="52"/>
-                <rect x="184" y="204" width="52" height="52"/>
-                <rect x="328" y="204" width="52" height="52"/>
-              </g>
-              <rect x="184" y="60" width="52" height="52" fill="#e4007c"/>
-            </svg>
-          </div>
-          <h3 class="proyecto__titulo">Casa Común</h3>
-          <p class="proyecto__meta">Campaña social · 2023</p>
-        </a>
-      </article>
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Casa Común"><use href="#p-casa"/></svg>
+          <span class="pieza__cliente">Casa Común</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Casa Común</h3>
+          <p class="pieza__tipo">Campaña social · 2023</p>
+          <p class="pieza__reto"><b>El reto:</b> hablar de vivienda sin recurrir a la iconografía de la pobreza. Buscábamos una imagen que interpelara al votante sin retratar a nadie, y que se pudiera imprimir en fotocopia sin perder fuerza.</p>
+        </div>
+      </a>
+    </figure>
 
-      <!-- 5 -->
-      <article class="proyecto proyecto--corto">
-        <a href="proyecto-sal-de-garraf.html">
-          <div class="proyecto__portada">
-            <svg viewBox="0 0 400 300" role="img" aria-label="Portada del proyecto Turno">
-              <rect width="400" height="300" fill="#e4007c"/>
-              <g fill="#e4e5e1">
-                <rect x="48" y="72"  width="230" height="34" rx="17"/>
-                <rect x="48" y="124" width="164" height="34" rx="17"/>
-                <rect x="48" y="176" width="272" height="34" rx="17"/>
-              </g>
-              <circle cx="330" cy="141" r="22" fill="#1b3fcb"/>
-            </svg>
-          </div>
-          <h3 class="proyecto__titulo">Turno</h3>
-          <p class="proyecto__meta">Dirección de arte digital · 2023</p>
-        </a>
-      </article>
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Turno"><use href="#p-turno"/></svg>
+          <span class="pieza__cliente">Turno</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Turno</h3>
+          <p class="pieza__tipo">Dirección de arte digital · 2023</p>
+          <p class="pieza__reto"><b>El reto:</b> una app de citas médicas usada sobre todo por mayores de sesenta y cinco años. Cualquier decisión estética tenía que pasar antes por la legibilidad, el contraste y el tamaño mínimo de toque.</p>
+        </div>
+      </a>
+    </figure>
 
-    </div>
+    <figure class="pieza">
+      <a href="proyecto-sal-de-garraf.html">
+        <div class="pieza__marco">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Ronda"><use href="#p-ronda"/></svg>
+          <span class="pieza__cliente">Ronda</span>
+        </div>
+        <div class="pieza__reverso">
+          <h3 class="pieza__titulo">Ronda</h3>
+          <p class="pieza__tipo">Sistema editorial · 2022</p>
+          <p class="pieza__reto"><b>El reto:</b> una revista de barrio hecha por voluntarios, con maquetadores distintos cada número. La solución fue una retícula corta y cinco plantillas cerradas que sobreviven al cambio de manos.</p>
+        </div>
+      </a>
+    </figure>
+
+    <p class="apunte">Trabajo sola o dirigiendo equipo, según lo que pida el encargo. Entro pronto, en la conversación de estrategia, y me quedo hasta la prueba de color.</p>
+
   </section>
 
-  <section class="seccion seccion--linea" id="sobre">
-    <div class="sobre">
-      <div class="sobre__texto">
-        <p>Llevo ocho años dirigiendo el aspecto de marcas de consumo, cultura y sector público, entre agencia y estudio propio.</p>
-        <p>Trabajo desde el concepto hasta la ejecución: territorio visual, sistema tipográfico, dirección de fotografía y producción gráfica. Me interesa que una marca funcione igual de bien en una etiqueta de 4 cm que en una lona de 12 metros, y que el equipo que la hereda pueda seguir usándola sin mí.</p>
-        <p>Formada en Bellas Artes y con paso por estudios de Barcelona y Lisboa. Actualmente acepto encargos freelance y colaboraciones a largo plazo.</p>
-      </div>
-
-      <dl class="datos">
-        <dt>Disciplinas</dt>
-        <dd>Identidad, packaging, campaña, dirección de fotografía, diseño editorial</dd>
-
-        <dt>Clientes</dt>
-        <dd>Marcas de alimentación, festivales, ONG, producto digital</dd>
-
-        <dt>Herramientas</dt>
-        <dd>Suite Adobe, Figma, producción gráfica y control de color</dd>
-
-        <dt>Idiomas</dt>
-        <dd>Castellano, catalán, inglés, portugués</dd>
-
-        <dt>Base</dt>
-        <dd>Barcelona, disponible para viajar</dd>
-      </dl>
-    </div>
+  <!-- ==========  3 · DECLARACIÓN  ===================== -->
+  <section class="declaracion" id="sobre">
+    <h2>Del concepto<br>a la imprenta</h2>
+    <p>Ocho años dirigiendo el aspecto de marcas de consumo, cultura y sector público, entre agencia y estudio propio. Territorio visual, sistema tipográfico, dirección de fotografía y control de color en máquina. Me interesa que el equipo que hereda una marca pueda seguir usándola sin mí.</p>
   </section>
 
-  <section class="seccion contacto" id="contacto">
-    <h2 class="seccion__titulo">¿Tienes un proyecto en marcha?</h2>
-    <a class="correo" href="mailto:hola@ejemplo.com">hola@ejemplo.com</a>
-    <ul class="redes">
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">Behance</a></li>
-      <li><a href="#">Descargar CV (PDF)</a></li>
+  <!-- ==========  4 · DESFILE  ========================= -->
+  <!-- Dos columnas de imágenes sin texto. Al hacer scroll, la
+       izquierda sube y la derecha baja. El script está al final. -->
+  <section class="desfile" aria-label="Imágenes de archivo">
+
+    <div class="desfile__col" data-desfile="sube">
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-sal"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-casa"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-tramas"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-bruma"/></svg></figure>
+    </div>
+
+    <div class="desfile__col" data-desfile="baja">
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-nocturna"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-prueba"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-turno"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-ronda"/></svg></figure>
+    </div>
+
+  </section>
+
+  <!-- ==========  5 · ÍNDICE COMPLETO  ================= -->
+  <section class="indice">
+    <div class="indice__esquinas">
+      <a class="indice__marca" href="#top">celia muntaner</a>
+      <a class="indice__contacto" href="#contacto">[Contacto]</a>
+    </div>
+
+    <ul class="lista">
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2025</span>
+        <span class="lista__nombre">Sal de Garraf * Identidad</span>
+        <span class="lista__disciplina">Packaging</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-sal"/></svg></span>
+      </a></li>
+
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2024</span>
+        <span class="lista__nombre">Nocturna 24 * Sistema visual</span>
+        <span class="lista__disciplina">Festival</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-nocturna"/></svg></span>
+      </a></li>
+
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2024</span>
+        <span class="lista__nombre">Bruma * Lanzamiento</span>
+        <span class="lista__disciplina">Campaña</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-bruma"/></svg></span>
+      </a></li>
+
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2023</span>
+        <span class="lista__nombre">Casa Común * Vivienda</span>
+        <span class="lista__disciplina">Campaña social</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-casa"/></svg></span>
+      </a></li>
+
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2023</span>
+        <span class="lista__nombre">Turno * Producto digital</span>
+        <span class="lista__disciplina">Dirección de arte</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-turno"/></svg></span>
+      </a></li>
+
+      <li><a href="proyecto-sal-de-garraf.html">
+        <span class="lista__anyo">2022</span>
+        <span class="lista__nombre">Ronda * Revista de barrio</span>
+        <span class="lista__disciplina">Editorial</span>
+        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-ronda"/></svg></span>
+      </a></li>
     </ul>
   </section>
 
 </main>
 
-<footer class="pie">
-  <span>© 2026 Celia Muntaner</span>
-  <span>Diseñado y montado a mano</span>
+<!-- ==========  6 · PIE  ============================== -->
+<footer class="pie" id="contacto">
+  <a href="mailto:hola@ejemplo.com">hola@ejemplo.com</a>
+  <a href="#">@celiamuntaner</a>
+  <a href="#">LinkedIn</a>
+  <span>Barcelona, España</span>
 </footer>
+
+<script>
+/* Desfile: las dos columnas se mueven en sentidos opuestos
+   según la posición de la sección en la ventana. */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var seccion = document.querySelector('.desfile');
+  if (!seccion) return;
+
+  var sube = seccion.querySelector('[data-desfile="sube"]');
+  var baja = seccion.querySelector('[data-desfile="baja"]');
+  var pendiente = false;
+
+  function recorrido(col) {
+    return Math.max(0, col.scrollHeight - seccion.clientHeight);
+  }
+
+  function pintar() {
+    var caja = seccion.getBoundingClientRect();
+    var total = window.innerHeight + caja.height;
+    var p = (window.innerHeight - caja.top) / total;
+    p = Math.min(1, Math.max(0, p));
+
+    sube.style.transform = 'translateY(' + (-p * recorrido(sube)) + 'px)';
+    baja.style.transform = 'translateY(' + (-(1 - p) * recorrido(baja)) + 'px)';
+    pendiente = false;
+  }
+
+  function pedir() {
+    if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); }
+  }
+
+  window.addEventListener('scroll', pedir, { passive: true });
+  window.addEventListener('resize', pedir);
+  pintar();
+})();
+</script>
 
 </body>
 </html>
