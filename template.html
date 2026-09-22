@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>celia muntaner — portfolio</title>
+<meta name="description" content="Portfolio de Celia Muntaner, creative and design brand manager. Barcelona.">
+<meta property="og:title" content="celia muntaner — portfolio">
+<meta property="og:image" content="images/4.jpg">
+<meta name="theme-color" content="#151515">
+<style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url(fonts/inter-latin-300-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+    :root { --ink:#151515; --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#151515; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  b { font-weight:700; }
+
+  /* one Canva page = one slide, 1920x1080 geometry scaled with container units */
+  .slide { background:var(--bg); }
+  .stage { position:relative; width:100%; aspect-ratio:16/9; margin:0 auto;
+           overflow:hidden; container-type:inline-size; }
+  .media, .layer { position:absolute; inset:0; container-type:inline-size; }
+  .layer { pointer-events:none; }
+  .layer > * { pointer-events:auto; }
+  .bgm { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .embed { position:absolute; }
+  .embed iframe { width:100%; height:100%; border:0; display:block; }
+
+  .t { position:absolute; margin:0; font-size:calc(var(--fs) * 1cqw / 19.2);
+       hyphens:manual; overflow-wrap:normal; white-space:normal; }
+  .t a { text-underline-offset:.15em; }
+  .c-title, .c-meta, .exp, .hf, .big, .h-name, .contact2 { white-space:nowrap; }
+  .card { position:absolute; border-radius:calc(20cqw / 19.2); }
+
+  /* slide 3 — index */
+  .row { position:absolute; left:calc(68.84cqw / 19.2); width:calc(762.42cqw / 19.2); height:calc(83.5cqw / 19.2);
+         border-top:calc(3cqw / 19.2) solid #fff; text-decoration:none; display:block; }
+  .rn { position:absolute; left:0; font-size:calc(22.158cqw / 19.2); font-weight:700; line-height:1.04; letter-spacing:-.025em;
+        margin-top:calc(-3cqw / 19.2); }
+  .rl { position:absolute; left:calc(67.69cqw / 19.2); width:calc(694.73cqw / 19.2); text-align:right;
+        font-size:calc(58.033cqw / 19.2); font-weight:400; line-height:1.04; letter-spacing:-.09em; margin-top:calc(-3cqw / 19.2); }
+  a.row .rl { transition:opacity .2s; }
+  a.row:hover .rl { opacity:.7; }
+
+  /* sound toggle for the videos that have audio */
+  .snd { position:absolute; right:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:3;
+         font:600 12px/1 var(--font); letter-spacing:.02em; color:#fff; background:rgba(21,21,21,.55);
+         border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:8px 12px; cursor:pointer;
+         backdrop-filter:blur(6px); }
+  .snd .off { display:none; }
+  .snd[aria-pressed="true"] .on { display:none; }
+  .snd[aria-pressed="true"] .off { display:inline; }
+  .snd:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+
+  /* site header + footer */
+  .site-head { position:fixed; inset:0 0 auto 0; z-index:20; display:flex; justify-content:space-between; align-items:center;
+               padding:16px clamp(16px,3vw,40px); color:#fff; mix-blend-mode:difference; font-size:14px; font-weight:700; }
+  .site-head a { text-decoration:none; }
+  .site-head nav { display:flex; gap:22px; font-weight:400; }
+  .site-head .lang { font-weight:700; }
+  .site-head nav a:hover { text-decoration:underline; text-underline-offset:4px; }
+  .site-foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(16px,3vw,40px);
+               background:#151515; color:#9a9a9a; font-size:13px; border-top:1px solid rgba(255,255,255,.15); }
+  .site-foot a { text-decoration:none; } .site-foot a:hover { color:#79efcf; }
+  html { scroll-padding-top:0; }
+
+  /* minimise text cards: only a "+" remains, moved to the slide corner */
+  .fold { position:absolute; left:var(--ox); top:var(--oy); width:calc(32cqw / 19.2); height:calc(32cqw / 19.2); min-width:20px; min-height:20px;
+          padding:0; border:0; background:none; color:var(--fc); cursor:pointer; z-index:5; font:300 calc(34cqw / 19.2)/1 var(--font);
+          display:grid; place-items:center; }
+  .fold::before { content:"–"; }
+  .fold.min::before { content:"+"; }
+  .fold.min { color:#fff; text-shadow:0 0 6px rgba(0,0,0,.55); font-size:max(22px, calc(44cqw / 19.2)); }
+  .fold.min.c-tl { left:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-tr { left:auto; right:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-bl { left:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .fold.min.c-br { left:auto; right:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .card { transition:opacity .25s; }
+  .card.is-min { opacity:0; pointer-events:none; }
+  .fold:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+  /* fullscreen */
+  .fsb { position:absolute; left:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:4; width:34px; height:34px; border-radius:50%;
+         border:1px solid rgba(255,255,255,.45); background:rgba(21,21,21,.45); cursor:pointer; opacity:0; transition:opacity .2s;
+         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E");
+         background-size:16px; background-repeat:no-repeat; background-position:center; }
+  .slide:hover .fsb, .fsb:focus-visible { opacity:1; }
+  .slide:fullscreen { display:flex; align-items:center; justify-content:center; background:var(--bg); }
+  .slide:fullscreen .stage { width:min(100vw, calc(100vh * 16 / 9)); }
+
+
+  /* ---- restored website top / about / contact (first version) ---- */
+  .wrap { max-width:1440px; margin:0 auto; padding:0 clamp(16px,4vw,56px); }
+  .label { font-size:13px; font-weight:600; margin:0 0 20px; }
+  .h2 { font-size:clamp(34px,4.5vw,60px); font-weight:500; letter-spacing:-.04em; line-height:1; margin:0 0 28px; }
+  .btn { display:inline-block; margin-top:12px; padding:12px 20px; border:1px solid currentColor; border-radius:999px;
+         font-size:14px; font-weight:600; text-decoration:none; transition:background .2s,color .2s; }
+  .btn:hover { background:#151515; color:#e7e7e9; }
+  .hero { min-height:100svh; display:flex; flex-direction:column; justify-content:center; position:relative;
+          padding:90px clamp(16px,4vw,56px) 32px; background:#151515; color:#fff; }
+  .hero__role { position:absolute; top:86px; right:clamp(16px,4vw,56px); text-align:right; font-size:14px; margin:0; }
+  .hero__title { font-size:clamp(64px,15vw,240px); font-weight:800; letter-spacing:-.06em; line-height:.86; margin:0; }
+  .hero__foot { position:absolute; left:clamp(16px,4vw,56px); right:clamp(16px,4vw,56px); bottom:28px;
+                display:flex; justify-content:space-between; font-size:14px; }
+  .hero__cta { color:#79efcf; text-decoration:none; font-weight:600; }
+  .about { padding:clamp(72px,10vw,140px) 0; background:#e7e7e9; color:#151515; font-size:17px; line-height:1.55; }
+  .about p { margin:0 0 1em; }
+  .about__grid { display:grid; gap:clamp(32px,5vw,72px); grid-template-columns:1.3fr 1fr .9fr; align-items:start; }
+  .about__bio p { max-width:58ch; }
+  .exp-list { list-style:none; padding:0; margin:0 0 20px; }
+  .exp-list li { display:grid; padding:16px 0; border-top:1px solid rgba(0,0,0,.18); }
+  .exp-list li:last-child { border-bottom:1px solid rgba(0,0,0,.18); }
+  .exp-list .r { font-weight:700; } .exp-list .d { color:#5f5f63; font-size:14px; }
+  .about__photo { margin:0; aspect-ratio:391.47/487.23; width:100%; background:#cfcfd2 url("images/2.jpg") no-repeat;
+                  background-size:490.46% auto; background-position:92.94% 43.03%; }
+  .contact { padding:clamp(96px,14vw,200px) 0; text-align:center; background:#151515; color:#fff; }
+  .contact .label { color:#9a9a9a; }
+  .contact__mail { display:inline-block; font-size:clamp(28px,7vw,104px); font-weight:800; letter-spacing:-.05em; line-height:1;
+                   text-decoration:none; word-break:break-word; }
+  .contact__mail:hover { color:#79efcf; }
+  .contact__links { margin-top:36px; display:flex; gap:28px; justify-content:center; flex-wrap:wrap; font-size:15px; }
+  .contact__links a { text-decoration:none; } .contact__links a:hover { color:#79efcf; }
+  @media (max-width:1000px) { .about__grid { grid-template-columns:1fr 1fr; } .about__bio { grid-column:1/-1; } }
+  @media (max-width:640px) { .about__grid { grid-template-columns:1fr; } .about__photo { max-width:360px; }
+                             .hero__role { top:70px; } .site-head .home { display:none; } }
+
+  /* back to top */
+  .to-top { position:fixed; right:clamp(14px,2vw,28px); bottom:clamp(14px,2vw,28px); z-index:30; width:40px; height:40px;
+            border-radius:50%; border:1px solid rgba(255,255,255,.4); background:rgba(21,21,21,.6); color:#fff; cursor:pointer;
+            display:grid; place-items:center; font:400 18px/1 var(--font); backdrop-filter:blur(6px);
+            opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s, transform .25s; }
+  .to-top.show { opacity:1; transform:none; pointer-events:auto; }
+  .to-top:hover { background:#79efcf; color:#151515; border-color:#79efcf; }
+
+  /* phones: keep each slide's media exactly as in Canva, text flows below it at a readable size */
+  @media (max-width: 700px) {
+    .stage { width:100%; aspect-ratio:auto; overflow:visible; }
+    .media { position:relative; inset:auto; aspect-ratio:16/9; overflow:hidden; }
+    .k-none .media { display:none; }
+    .layer { position:relative; inset:auto; padding:20px 16px 28px; display:flex; flex-direction:column; gap:10px; }
+    .k-none .layer { padding:32px 16px 36px; min-height:auto; }
+    .t { position:static; width:auto !important; font-size:max(13px, calc(var(--fs) * .56px)); }
+    .t.big { font-size:15vw; margin:24px 0; }
+    .t.big-mail { font-size:7.4vw; }
+    .t.h-name { font-size:36px; }
+    .t.bio { text-align:left !important; }
+    .c-title, .exp, .hf, .h-name { white-space:normal; }
+    .t.star { display:none; }
+    .card { position:static; width:auto !important; height:auto !important; border-radius:12px;
+            padding:18px 18px 16px; display:flex; flex-wrap:wrap; gap:10px 0; }
+    .card .t { width:100% !important; }
+    .card .c-desc { text-align:left !important; }
+    .card .c-meta { width:50% !important; }
+    .snd { right:10px; bottom:10px; }
+    .fold, .fsb { display:none; }
+    .card.is-min { opacity:1; pointer-events:auto; }
+    .site-head { font-size:13px; } .site-head nav { gap:14px; }
+    .row { position:static; width:auto; height:auto; display:flex; justify-content:space-between; align-items:baseline;
+           gap:12px; padding:8px 0; border-top-width:2px; }
+    .rn, .rl { position:static; margin:0; width:auto; }
+    .rn { font-size:12px; }
+    .rl { font-size:clamp(22px, 7.5vw, 34px); }
+    .has-mcrop .media { aspect-ratio:calc(var(--mc-w) / var(--mc-h)); width:58%; margin:24px auto 0; }
+    .has-mcrop .bgm { inset:auto; width:calc(1920 / var(--mc-w) * 100%); height:auto; max-width:none;
+                      left:calc(var(--mc-x) / var(--mc-w) * -100%); top:calc(var(--mc-y) / var(--mc-h) * -100%); object-fit:fill; }
+  }
+</style>
+</head>
+<body>
+<header class="site-head"><a class="home" href="#top">celia muntaner</a><nav aria-label="Principal"><a href="#sobre-mi">sobre mí</a><a href="#s3">proyectos</a><a href="#contacto">contacto</a><a class="lang" href="en.html" lang="en">EN</a></nav></header>
+<main id="top">
+<section class="hero">
+  <p class="hero__role">creative and design<br>brand manager</p>
+  <h1 class="hero__title">celia<br>muntaner</h1>
+  <div class="hero__foot"><span>Barcelona</span><a href="#s3" class="hero__cta">ver portfolio ↓</a></div>
+</section>
+<section id="sobre-mi" class="about">
+  <div class="wrap about__grid">
+    <div class="about__bio">
+      <h2 class="h2">sobre mí</h2>
+      <p><strong>Directora creativa y de arte</strong> con más de 6 años de experiencia, especializada en el sector de la cosmética y el skincare.</p>
+      <p>Mi actual proyecto es <strong>Binomial skincare</strong>, una marca de dermocosmética de mesoestetic Pharma Group. Involucrada desde la fase previa al lanzamiento de la marca, liderando la dirección creativa, la identidad visual y la estrategia de la marca. Conceptualizo campañas y su desarrollo en diferentes canales (social, paid, web, offline…).</p>
+      <p>Además, desarrollo funciones de Brand Manager: participo en la implementación de estrategias de marca, desde el rendimiento de ventas y los canales de distribución hasta la comunicación directa con agencias y proveedores.</p>
+      <p>Poseo experiencia previa en agencia que me aportó una visión transversal del sector creativo y una excelente capacidad de respuesta ante grandes ritmos de trabajo.</p>
+    </div>
+    <div>
+      <h3 class="label">experiencia</h3>
+      <ol class="exp-list">
+        <li><span class="r">Creativity and Design Manager</span><span>Binomial (mesoestetic Pharma Group)</span><span class="d">abr. 2024 — actualidad</span></li>
+        <li><span class="r">Mid Art Director</span><span>Multiplica (fusión beAgency)</span><span class="d">mar. 2022 — abr. 2024</span></li>
+        <li><span class="r">Art Director</span><span>beAgency</span><span class="d">oct. 2020 — mar. 2022</span></li>
+      </ol>
+      <a class="btn" href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">descargar cv completo ↗</a>
+    </div>
+    <figure class="about__photo" role="img" aria-label="Retrato de Celia Muntaner"></figure>
+  </div>
+</section>
+<!--SLIDES-->
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <p class="label">contacto</p>
+    <a class="contact__mail" href="mailto:celiamuntaner@gmail.com">celiamuntaner@gmail.com</a>
+    <div class="contact__links"><a href="https://www.linkedin.com/in/celiamuntaner/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a><span>Barcelona</span></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot"><span>© <span id="yr">2026</span> Celia Muntaner</span><a href="#top">volver arriba ↑</a></footer>
+<button class="to-top" type="button" aria-label="Volver arriba">↑</button>
+<script>
+  // Videos: play silently while visible, pause when scrolled away (like a slide being shown).
+  const vids = [...document.querySelectorAll('video.bgm')];
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); }
+      else { v.pause(); }
+    }
+  }, { threshold: 0.35 });
+  vids.forEach(v => io.observe(v));
+
+  // Sound toggle (only on videos that have audio): one video with sound at a time.
+  document.querySelectorAll('.snd').forEach(btn => {
+    const v = btn.parentElement.querySelector('video');
+    btn.addEventListener('click', () => {
+      const on = v.muted;
+      document.querySelectorAll('.snd').forEach(b => {
+        const o = b.parentElement.querySelector('video'); o.muted = true; b.setAttribute('aria-pressed', 'false');
+        b.setAttribute('aria-label', 'Activar sonido');
+      });
+      if (on) { v.muted = false; v.play().catch(() => {}); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Silenciar'); }
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // minimise / restore text cards
+  document.querySelectorAll('.fold').forEach(b => b.addEventListener('click', () => {
+    const c = b.previousElementSibling, min = !b.classList.contains('min');
+    b.classList.toggle('min', min); c.classList.toggle('is-min', min);
+    b.setAttribute('aria-expanded', String(!min)); b.setAttribute('aria-label', min ? 'Mostrar texto' : 'Minimizar texto');
+  }));
+  // fullscreen per slide
+  document.querySelectorAll('.fsb').forEach(b => b.addEventListener('click', () => {
+    const s = b.closest('.slide');
+    if (document.fullscreenElement) document.exitFullscreen(); else (s.requestFullscreen || s.webkitRequestFullscreen)?.call(s);
+  }));
+  const tt = document.querySelector('.to-top');
+  addEventListener('scroll', () => tt.classList.toggle('show', scrollY > innerHeight * .8), { passive:true });
+  tt.addEventListener('click', () => scrollTo({ top:0, behavior:'smooth' }));
+</script>
+</body>
+</html>

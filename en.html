@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>celia muntaner — portfolio</title>
+<meta name="description" content="Portfolio of Celia Muntaner, creative and design brand manager. Barcelona.">
+<meta property="og:title" content="celia muntaner — portfolio">
+<meta property="og:image" content="images/4.jpg">
+<meta name="theme-color" content="#151515">
+<style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url(fonts/inter-latin-300-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+    :root { --ink:#151515; --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#151515; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  b { font-weight:700; }
+
+  /* one Canva page = one slide, 1920x1080 geometry scaled with container units */
+  .slide { background:var(--bg); }
+  .stage { position:relative; width:100%; aspect-ratio:16/9; margin:0 auto;
+           overflow:hidden; container-type:inline-size; }
+  .media, .layer { position:absolute; inset:0; container-type:inline-size; }
+  .layer { pointer-events:none; }
+  .layer > * { pointer-events:auto; }
+  .bgm { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .embed { position:absolute; }
+  .embed iframe { width:100%; height:100%; border:0; display:block; }
+
+  .t { position:absolute; margin:0; font-size:calc(var(--fs) * 1cqw / 19.2);
+       hyphens:manual; overflow-wrap:normal; white-space:normal; }
+  .t a { text-underline-offset:.15em; }
+  .c-title, .c-meta, .exp, .hf, .big, .h-name, .contact2 { white-space:nowrap; }
+  .card { position:absolute; border-radius:calc(20cqw / 19.2); }
+
+  /* slide 3 — index */
+  .row { position:absolute; left:calc(68.84cqw / 19.2); width:calc(762.42cqw / 19.2); height:calc(83.5cqw / 19.2);
+         border-top:calc(3cqw / 19.2) solid #fff; text-decoration:none; display:block; }
+  .rn { position:absolute; left:0; font-size:calc(22.158cqw / 19.2); font-weight:700; line-height:1.04; letter-spacing:-.025em;
+        margin-top:calc(-3cqw / 19.2); }
+  .rl { position:absolute; left:calc(67.69cqw / 19.2); width:calc(694.73cqw / 19.2); text-align:right;
+        font-size:calc(58.033cqw / 19.2); font-weight:400; line-height:1.04; letter-spacing:-.09em; margin-top:calc(-3cqw / 19.2); }
+  a.row .rl { transition:opacity .2s; }
+  a.row:hover .rl { opacity:.7; }
+
+  /* sound toggle for the videos that have audio */
+  .snd { position:absolute; right:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:3;
+         font:600 12px/1 var(--font); letter-spacing:.02em; color:#fff; background:rgba(21,21,21,.55);
+         border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:8px 12px; cursor:pointer;
+         backdrop-filter:blur(6px); }
+  .snd .off { display:none; }
+  .snd[aria-pressed="true"] .on { display:none; }
+  .snd[aria-pressed="true"] .off { display:inline; }
+  .snd:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+
+  /* site header + footer */
+  .site-head { position:fixed; inset:0 0 auto 0; z-index:20; display:flex; justify-content:space-between; align-items:center;
+               padding:16px clamp(16px,3vw,40px); color:#fff; mix-blend-mode:difference; font-size:14px; font-weight:700; }
+  .site-head a { text-decoration:none; }
+  .site-head nav { display:flex; gap:22px; font-weight:400; }
+  .site-head .lang { font-weight:700; }
+  .site-head nav a:hover { text-decoration:underline; text-underline-offset:4px; }
+  .site-foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(16px,3vw,40px);
+               background:#151515; color:#9a9a9a; font-size:13px; border-top:1px solid rgba(255,255,255,.15); }
+  .site-foot a { text-decoration:none; } .site-foot a:hover { color:#79efcf; }
+  html { scroll-padding-top:0; }
+
+  /* minimise text cards: only a "+" remains, moved to the slide corner */
+  .fold { position:absolute; left:var(--ox); top:var(--oy); width:calc(32cqw / 19.2); height:calc(32cqw / 19.2); min-width:20px; min-height:20px;
+          padding:0; border:0; background:none; color:var(--fc); cursor:pointer; z-index:5; font:300 calc(34cqw / 19.2)/1 var(--font);
+          display:grid; place-items:center; }
+  .fold::before { content:"–"; }
+  .fold.min::before { content:"+"; }
+  .fold.min { color:#fff; text-shadow:0 0 6px rgba(0,0,0,.55); font-size:max(22px, calc(44cqw / 19.2)); }
+  .fold.min.c-tl { left:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-tr { left:auto; right:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-bl { left:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .fold.min.c-br { left:auto; right:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .card { transition:opacity .25s; }
+  .card.is-min { opacity:0; pointer-events:none; }
+  .fold:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+  /* fullscreen */
+  .fsb { position:absolute; left:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:4; width:34px; height:34px; border-radius:50%;
+         border:1px solid rgba(255,255,255,.45); background:rgba(21,21,21,.45); cursor:pointer; opacity:0; transition:opacity .2s;
+         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E");
+         background-size:16px; background-repeat:no-repeat; background-position:center; }
+  .slide:hover .fsb, .fsb:focus-visible { opacity:1; }
+  .slide:fullscreen { display:flex; align-items:center; justify-content:center; background:var(--bg); }
+  .slide:fullscreen .stage { width:min(100vw, calc(100vh * 16 / 9)); }
+
+
+  /* ---- restored website top / about / contact (first version) ---- */
+  .wrap { max-width:1440px; margin:0 auto; padding:0 clamp(16px,4vw,56px); }
+  .label { font-size:13px; font-weight:600; margin:0 0 20px; }
+  .h2 { font-size:clamp(34px,4.5vw,60px); font-weight:500; letter-spacing:-.04em; line-height:1; margin:0 0 28px; }
+  .btn { display:inline-block; margin-top:12px; padding:12px 20px; border:1px solid currentColor; border-radius:999px;
+         font-size:14px; font-weight:600; text-decoration:none; transition:background .2s,color .2s; }
+  .btn:hover { background:#151515; color:#e7e7e9; }
+  .hero { min-height:100svh; display:flex; flex-direction:column; justify-content:center; position:relative;
+          padding:90px clamp(16px,4vw,56px) 32px; background:#151515; color:#fff; }
+  .hero__role { position:absolute; top:86px; right:clamp(16px,4vw,56px); text-align:right; font-size:14px; margin:0; }
+  .hero__title { font-size:clamp(64px,15vw,240px); font-weight:800; letter-spacing:-.06em; line-height:.86; margin:0; }
+  .hero__foot { position:absolute; left:clamp(16px,4vw,56px); right:clamp(16px,4vw,56px); bottom:28px;
+                display:flex; justify-content:space-between; font-size:14px; }
+  .hero__cta { color:#79efcf; text-decoration:none; font-weight:600; }
+  .about { padding:clamp(72px,10vw,140px) 0; background:#e7e7e9; color:#151515; font-size:17px; line-height:1.55; }
+  .about p { margin:0 0 1em; }
+  .about__grid { display:grid; gap:clamp(32px,5vw,72px); grid-template-columns:1.3fr 1fr .9fr; align-items:start; }
+  .about__bio p { max-width:58ch; }
+  .exp-list { list-style:none; padding:0; margin:0 0 20px; }
+  .exp-list li { display:grid; padding:16px 0; border-top:1px solid rgba(0,0,0,.18); }
+  .exp-list li:last-child { border-bottom:1px solid rgba(0,0,0,.18); }
+  .exp-list .r { font-weight:700; } .exp-list .d { color:#5f5f63; font-size:14px; }
+  .about__photo { margin:0; aspect-ratio:391.47/487.23; width:100%; background:#cfcfd2 url("images/2.jpg") no-repeat;
+                  background-size:490.46% auto; background-position:92.94% 43.03%; }
+  .contact { padding:clamp(96px,14vw,200px) 0; text-align:center; background:#151515; color:#fff; }
+  .contact .label { color:#9a9a9a; }
+  .contact__mail { display:inline-block; font-size:clamp(28px,7vw,104px); font-weight:800; letter-spacing:-.05em; line-height:1;
+                   text-decoration:none; word-break:break-word; }
+  .contact__mail:hover { color:#79efcf; }
+  .contact__links { margin-top:36px; display:flex; gap:28px; justify-content:center; flex-wrap:wrap; font-size:15px; }
+  .contact__links a { text-decoration:none; } .contact__links a:hover { color:#79efcf; }
+  @media (max-width:1000px) { .about__grid { grid-template-columns:1fr 1fr; } .about__bio { grid-column:1/-1; } }
+  @media (max-width:640px) { .about__grid { grid-template-columns:1fr; } .about__photo { max-width:360px; }
+                             .hero__role { top:70px; } .site-head .home { display:none; } }
+
+  /* back to top */
+  .to-top { position:fixed; right:clamp(14px,2vw,28px); bottom:clamp(14px,2vw,28px); z-index:30; width:40px; height:40px;
+            border-radius:50%; border:1px solid rgba(255,255,255,.4); background:rgba(21,21,21,.6); color:#fff; cursor:pointer;
+            display:grid; place-items:center; font:400 18px/1 var(--font); backdrop-filter:blur(6px);
+            opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s, transform .25s; }
+  .to-top.show { opacity:1; transform:none; pointer-events:auto; }
+  .to-top:hover { background:#79efcf; color:#151515; border-color:#79efcf; }
+
+  /* phones: keep each slide's media exactly as in Canva, text flows below it at a readable size */
+  @media (max-width: 700px) {
+    .stage { width:100%; aspect-ratio:auto; overflow:visible; }
+    .media { position:relative; inset:auto; aspect-ratio:16/9; overflow:hidden; }
+    .k-none .media { display:none; }
+    .layer { position:relative; inset:auto; padding:20px 16px 28px; display:flex; flex-direction:column; gap:10px; }
+    .k-none .layer { padding:32px 16px 36px; min-height:auto; }
+    .t { position:static; width:auto !important; font-size:max(13px, calc(var(--fs) * .56px)); }
+    .t.big { font-size:15vw; margin:24px 0; }
+    .t.big-mail { font-size:7.4vw; }
+    .t.h-name { font-size:36px; }
+    .t.bio { text-align:left !important; }
+    .c-title, .exp, .hf, .h-name { white-space:normal; }
+    .t.star { display:none; }
+    .card { position:static; width:auto !important; height:auto !important; border-radius:12px;
+            padding:18px 18px 16px; display:flex; flex-wrap:wrap; gap:10px 0; }
+    .card .t { width:100% !important; }
+    .card .c-desc { text-align:left !important; }
+    .card .c-meta { width:50% !important; }
+    .snd { right:10px; bottom:10px; }
+    .fold, .fsb { display:none; }
+    .card.is-min { opacity:1; pointer-events:auto; }
+    .site-head { font-size:13px; } .site-head nav { gap:14px; }
+    .row { position:static; width:auto; height:auto; display:flex; justify-content:space-between; align-items:baseline;
+           gap:12px; padding:8px 0; border-top-width:2px; }
+    .rn, .rl { position:static; margin:0; width:auto; }
+    .rn { font-size:12px; }
+    .rl { font-size:clamp(22px, 7.5vw, 34px); }
+    .has-mcrop .media { aspect-ratio:calc(var(--mc-w) / var(--mc-h)); width:58%; margin:24px auto 0; }
+    .has-mcrop .bgm { inset:auto; width:calc(1920 / var(--mc-w) * 100%); height:auto; max-width:none;
+                      left:calc(var(--mc-x) / var(--mc-w) * -100%); top:calc(var(--mc-y) / var(--mc-h) * -100%); object-fit:fill; }
+  }
+</style>
+</head>
+<body>
+<header class="site-head"><a class="home" href="#top">celia muntaner</a><nav aria-label="Principal"><a href="#sobre-mi">about</a><a href="#s3">projects</a><a href="#contacto">contact</a><a class="lang" href="index.html" lang="es">ES</a></nav></header>
+<main id="top">
+<section class="hero">
+  <p class="hero__role">creative and design<br>brand manager</p>
+  <h1 class="hero__title">celia<br>muntaner</h1>
+  <div class="hero__foot"><span>Barcelona</span><a href="#s3" class="hero__cta">see portfolio ↓</a></div>
+</section>
+<section id="sobre-mi" class="about">
+  <div class="wrap about__grid">
+    <div class="about__bio">
+      <h2 class="h2">about me</h2>
+      <p><strong>Creative and art director</strong> with more than 6 years of experience, specialised in the cosmetics and skincare sector.</p>
+      <p>My current project is <strong>Binomial skincare</strong>, a dermocosmetics brand by mesoestetic Pharma Group. I have been involved since before the brand launched, leading its creative direction, visual identity and brand strategy. I conceptualise campaigns and their roll-out across channels (social, paid, web, offline…).</p>
+      <p>I also work as Brand Manager: I take part in implementing brand strategy, from sales performance and distribution channels to direct communication with agencies and suppliers.</p>
+      <p>My previous agency experience gave me a cross-cutting view of the creative industry and the ability to respond quickly under a demanding pace of work.</p>
+    </div>
+    <div>
+      <h3 class="label">experience</h3>
+      <ol class="exp-list">
+        <li><span class="r">Creativity and Design Manager</span><span>Binomial (mesoestetic Pharma Group)</span><span class="d">Apr 2024 — present</span></li>
+        <li><span class="r">Mid Art Director</span><span>Multiplica (beAgency merger)</span><span class="d">Mar 2022 — Apr 2024</span></li>
+        <li><span class="r">Art Director</span><span>beAgency</span><span class="d">Oct 2020 — Mar 2022</span></li>
+      </ol>
+      <a class="btn" href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">download full CV ↗</a>
+    </div>
+    <figure class="about__photo" role="img" aria-label="Portrait of Celia Muntaner"></figure>
+  </div>
+</section>
+<section class="slide k-none" id="s3" style="--bg:#151515" aria-label="Slide 3"><div class="stage"><div class="media"></div><div class="layer"><a href="#s4" class="row" style="top:15.1927cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">001</span><span class="rl" style="top:0.4464cqw;color:#79efcf">branding &amp; packaging</span></a><a href="#s10" class="row" style="top:19.5427cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">002</span><span class="rl" style="top:0.4464cqw;color:#79efcf">launch event</span></a><a href="#s14" class="row" style="top:23.8927cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">003</span><span class="rl" style="top:0.4464cqw;color:#79efcf">AI-generated content</span></a><a href="#s17" class="row" style="top:28.2427cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">004</span><span class="rl" style="top:0.4464cqw;color:#79efcf">campaigns</span></a><a href="#s20" class="row" style="top:32.6177cqw"><span class="rn" style="top:1.5641cqw;color:#79efcf">005</span><span class="rl" style="top:0.4464cqw;color:#79efcf">creative content</span></a><a href="#s21" class="row" style="top:36.9849cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">006</span><span class="rl" style="top:0.4464cqw;color:#79efcf">offline activations</span></a><a href="#s23" class="row" style="top:41.3526cqw"><span class="rn" style="top:1.5641cqw;color:#fff">007</span><span class="rl" style="top:0.4464cqw;color:#fff">levi’s</span></a><a href="#s25" class="row" style="top:45.7198cqw"><span class="rn" style="top:1.5646cqw;color:#fff">007</span><span class="rl" style="top:0.4464cqw;color:#fff">rilastil</span></a><div class="row" style="top:50.0875cqw"><span class="rn" style="top:1.5641cqw;color:#fff">007</span><span class="rl" style="top:0.4458cqw;color:#fff">ribs</span></div></div></div></section>
+<section class="slide k-img" id="s4" style="--bg:#ffffff" aria-label="Slide 4"><div class="stage"><div class="media"><img class="bgm" src="images/4.jpg" alt="Slide 4" loading="lazy" decoding="async"></div><div class="layer"><p class="t " style="left:3.3661cqw;top:19.9677cqw;width:19.9198cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">mesoestetic Pharma group® saw the need to create a skincare brand focused on Gen Z. Together with the agency Morillas, the whole strategy was defined and developed, with a 100% digital and transgressive approach.</p><p class="t " style="left:26.2260cqw;top:19.9677cqw;width:16.9802cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">When the in-house team dedicated to the brand was created (when I joined), the project was handed over and centralised in the new team.</p><p class="t " style="left:3.3661cqw;top:36.5385cqw;width:39.8396cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">Since then, the brand has been developed by the team, adjusting the strategy and drawing up action plans to optimise resources and profitability.</p><p class="t " style="left:3.3661cqw;top:45.0370cqw;width:39.8396cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">My role in the team grew from graphic designer to leading the whole conceptual and creative side of the brand, defining its identity and creating content for its growth and market expansion, while keeping its essence and purpose as a brand.</p></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s5" style="--bg:#151515" aria-label="Slide 5"><div class="stage"><div class="media"><video class="bgm" src="media/5.mp4" poster="media/5-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Turn sound on" aria-pressed="false"><span class="on">sound</span><span class="off">mute</span></button></div><div class="layer"><div class="card" style="left:53.6615cqw;top:33.7500cqw;width:40.7135cqw;height:16.8750cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(001) Video Manifesto</p><p class="t c-desc" style="left:1.6677cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Presentation video of the brand and its product portfolio. Its visual style, inspired by what connects with Gen Z, reflects Binomial’s mission in every detail: simple, effective skincare.</p><p class="t c-meta" style="left:1.6677cqw;top:13.9734cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Agencia Morillas</p><p class="t c-meta c-meta-r" style="left:20.1193cqw;top:13.9734cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">April–September 2024</p></div><button class="fold c-br" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:92.0833cqw;--oy:34.3750cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s6" style="--bg:#e7e7e9" aria-label="Slide 6"><div class="stage"><div class="media"><img class="bgm" src="images/6.jpg" alt="Slide 6" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:3.3375cqw;top:4.8964cqw;width:39.7422cqw;height:13.7906cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6260cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(002) Packaging</p><p class="t c-desc" style="left:1.6672cqw;top:4.4068cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Concept and final artwork for the primary and secondary packaging of the whole range. Supplier contact and production follow-up.</p><p class="t c-meta" style="left:1.6672cqw;top:10.3406cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Orriols Packaging</p><p class="t c-meta c-meta-r" style="left:20.1188cqw;top:10.3406cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">April–September 2024</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:40.7880cqw;--oy:5.5214cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s7" style="--bg:#151515" aria-label="Slide 7"><div class="stage"><div class="media"><img class="bgm" src="media/7.gif" alt="Slide 7" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:7.9005cqw;top:38.9932cqw;width:40.7135cqw;height:13.9964cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(003) Shooting</p><p class="t c-desc" style="left:1.6677cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Concept and art direction of the brand’s launch photo shoot, including product still life, model interaction and a focus on product texture.</p><p class="t c-meta" style="left:1.6677cqw;top:10.5630cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Agencia Morillas</p><p class="t c-meta c-meta-r" style="left:20.1193cqw;top:10.5630cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">April–September 2024</p></div><button class="fold c-bl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:46.3224cqw;--oy:39.6182cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s8" style="--bg:#151515" aria-label="Slide 8"><div class="stage"><div class="media"><img class="bgm" src="images/8.jpg" alt="Slide 8" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s9" style="--bg:#151515" aria-label="Slide 9"><div class="stage"><div class="media"><img class="bgm" src="images/9.jpg" alt="Slide 9" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:55.1917cqw;top:4.6724cqw;width:40.7135cqw;height:12.7646cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6266cqw;width:31.9615cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(004) Website and digital content</p><p class="t c-desc" style="left:1.6672cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">E-commerce design together with tbb agency. UX concept and look and feel of the website.</p><p class="t c-meta" style="left:1.6672cqw;top:9.2089cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">tbb agency</p><p class="t c-meta c-meta-r" style="left:20.1187cqw;top:9.2089cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">April–September 2024</p></div><button class="fold c-tr" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:93.6135cqw;--oy:5.2974cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s10" style="--bg:#e7e7e9" aria-label="Slide 10"><div class="stage"><div class="media"><img class="bgm" src="images/10.jpg" alt="Slide 10" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:55.6901cqw;top:34.3057cqw;width:40.7135cqw;height:19.6938cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:2.5427cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(005) Launch event</p><p class="t c-desc" style="left:1.6672cqw;top:5.7604cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">An experiential pop-up in Madrid, with a space dedicated to skincare to try the products and live the brand experience, with several activations and activities. <br>Communication campaign for the event, with a digital call-out and wildposting around the venue.</p><p class="t c-meta" style="left:1.6672cqw;top:16.7354cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Pelonio</p><p class="t c-meta c-meta-r" style="left:20.1187cqw;top:16.7354cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">October 2024</p></div><button class="fold c-br" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:94.1120cqw;--oy:34.9307cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s11" style="--bg:#e7e7e9" aria-label="Slide 11"><div class="stage"><div class="media"><video class="bgm" src="media/11.mp4" poster="media/11-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Turn sound on" aria-pressed="false"><span class="on">sound</span><span class="off">mute</span></button></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s12" style="--bg:#e7e7e9" aria-label="Slide 12"><div class="stage"><div class="media"><video class="bgm" src="media/12.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s13" style="--bg:#e7e7e9" aria-label="Slide 13"><div class="stage"><div class="media"><video class="bgm" src="media/13.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s14" style="--bg:#e7e7e9" aria-label="Slide 14"><div class="stage"><div class="media"><img class="bgm" src="images/14.jpg" alt="Slide 14" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:56.2469cqw;top:18.2646cqw;width:40.7135cqw;height:15.8031cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6266cqw;width:33.8542cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(006) AI generated content</p><p class="t c-desc" style="left:2.1745cqw;top:5.7026cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">AI content creation and automation for producing Paid Media assets at scale with Figma. Images used on the website and digital channels.</p><p class="t c-meta" style="left:2.1745cqw;top:12.2526cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Nano Banana and Figma</p><p class="t c-meta c-meta-r" style="left:20.6260cqw;top:12.2526cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">2026</p></div><button class="fold c-tr" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:94.6688cqw;--oy:18.8896cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s15" style="--bg:#e7e7e9" aria-label="Slide 15"><div class="stage"><div class="media"><img class="bgm" src="images/15.jpg" alt="Slide 15" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s16" style="--bg:#e7e7e9" aria-label="Slide 16"><div class="stage"><div class="media"><img class="bgm" src="images/16.jpg" alt="Slide 16" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s17" style="--bg:#e7e7e9" aria-label="Slide 17"><div class="stage"><div class="media"><video class="bgm" src="media/17.mp4" poster="media/17-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Turn sound on" aria-pressed="false"><span class="on">sound</span><span class="off">mute</span></button></div><div class="layer"><div class="card" style="left:55.5667cqw;top:3.1089cqw;width:40.7135cqw;height:18.4531cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:33.8542cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(007) Campaign “El mejor polvo de tu vida”</p><p class="t c-desc" style="left:1.7906cqw;top:4.6042cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Concept, development and execution of the campaign for Power Powder, our powder facial cleanser, “the best powder of your life”. We played with the Spanish double meaning to spark curiosity and increase reach. Online activations (microsite and localised paid media) and offline (wildposting).</p><p class="t c-meta" style="left:1.7906cqw;top:15.3510cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Neven (production company)</p><p class="t c-meta c-meta-r" style="left:20.2422cqw;top:15.3510cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">March 2025</p></div><button class="fold c-tr" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:93.9885cqw;--oy:3.7339cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s18" style="--bg:#e7e7e9" aria-label="Slide 18"><div class="stage"><div class="media"><img class="bgm" src="images/18.jpg" alt="Slide 18" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s19" style="--bg:#e7e7e9" aria-label="Slide 19"><div class="stage"><div class="media"><video class="bgm" src="media/19.mp4" poster="media/19-poster.jpg" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s20" style="--bg:#e7e7e9" aria-label="Slide 20"><div class="stage"><div class="media"><video class="bgm" src="media/20.mp4" poster="media/20-poster.jpg" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"><div class="card" style="left:3.9005cqw;top:3.9547cqw;width:40.3177cqw;height:13.8943cqw;background:#79efcf"><p class="t c-title" style="left:2.0849cqw;top:1.8995cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(008) Digital content</p><p class="t c-desc" style="left:2.0849cqw;top:5.7693cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.12;letter-spacing:0em;color:#151515">In-house content creation, with either a more scientific and educational approach or a lifestyle approach, following trends and the latest in social media.</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:41.9266cqw;--oy:4.5797cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s21" style="--bg:#e7e7e9" aria-label="Slide 21"><div class="stage"><div class="media"><img class="bgm" src="images/21.jpg" alt="Slide 21" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:27.5005cqw;top:3.7260cqw;width:40.3177cqw;height:16.0708cqw;background:#79efcf"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(009) Offline activations</p><p class="t c-desc" style="left:2.0849cqw;top:5.7688cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Coordination of offline actions such as samplings and markets, plus co-branded activations with like-minded health and fitness brands.</p><p class="t c-meta" style="left:2.0849cqw;top:12.3187cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Various suppliers</p><p class="t c-meta c-meta-r" style="left:20.5365cqw;top:12.3187cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">2026</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:65.5266cqw;--oy:4.3510cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s22" style="--bg:#e7e7e9" aria-label="Slide 22"><div class="stage"><div class="media"><img class="bgm" src="images/22.jpg" alt="Slide 22" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-embed" id="s23" style="--bg:#e7e7e9" aria-label="Slide 23"><div class="stage"><div class="media"><div class="embed" style="left:0.0000cqw;top:0.0000cqw;width:99.8438cqw;height:56.2500cqw"><iframe src="https://player.vimeo.com/video/760811572?title=0&byline=0&portrait=0&dnt=1" title="Levi’s - Social Live Shopping" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div></div><div class="layer"><div class="card" style="left:5.6250cqw;top:5.6250cqw;width:28.5177cqw;height:34.0573cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(010) Levi’s</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Social Live Shopping</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaign for the brand’s first live-stream shopping event. Concept and format of the stream, with different challenges and activations. <br><br>Design of on-screen graphics, signage and animations for the stream, as well as social media creatives and collaboration with influencers @gigi_vives, @andreiinflu and @monismurf.</p><p class="t c-meta" style="left:2.0849cqw;top:30.2318cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:30.2318cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2021</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:31.8510cqw;--oy:6.2500cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-img" id="s24" style="--bg:#e7e7e9" aria-label="Slide 24"><div class="stage"><div class="media"><img class="bgm" src="images/24.jpg" alt="Slide 24" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:5.6250cqw;top:4.4234cqw;width:28.5177cqw;height:18.8203cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(010) Levi’s</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Social Media</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Design and animation of creatives for the brand’s national channels.</p><p class="t c-meta" style="left:2.0849cqw;top:14.7245cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:14.7245cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:31.8510cqw;--oy:5.0484cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-embed" id="s25" style="--bg:#e7e7e9" aria-label="Slide 25"><div class="stage"><div class="media"><div class="embed" style="left:0.0000cqw;top:0.0437cqw;width:100.0000cqw;height:56.2063cqw"><iframe src="https://www.youtube-nocookie.com/embed/CMqaot85DZw?rel=0&modestbranding=1" title="Rilastil Official skin care & sun protection of FC Barcelona Women" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div></div><div class="layer"><div class="card" style="left:5.6250cqw;top:4.4234cqw;width:28.5177cqw;height:26.1948cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(011) Rilastil</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Barça Women sponsorship</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaign with FC Barcelona Women as skincare sponsor. Concept and shoot of the video spot and social media content with the players.<br><br>Social media strategy and content design for the brand’s own channels.</p><p class="t c-meta" style="left:2.0849cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency - Multiplica</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-tl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:31.8510cqw;--oy:5.0484cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section class="slide k-video" id="s26" style="--bg:#e7e7e9" aria-label="Slide 26"><div class="stage"><div class="media"><video class="bgm" src="media/27.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"><div class="card" style="left:1.8443cqw;top:15.0276cqw;width:28.5177cqw;height:26.1948cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(011) Rilastil</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Barça Women sponsorship</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaign with FC Barcelona Women as skincare sponsor. Concept and shoot of the video spot and social media content with the players.<br><br>Social media strategy and content design for the brand’s own channels.</p><p class="t c-meta" style="left:2.0849cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency - Multiplica</p><p class="t c-meta c-meta-r" style="left:8.3932cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-bl" type="button" aria-label="Minimise text" aria-expanded="true" style="--ox:28.0703cqw;--oy:15.6526cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Full screen"></button></div></section>
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <p class="label">contact</p>
+    <a class="contact__mail" href="mailto:celiamuntaner@gmail.com">celiamuntaner@gmail.com</a>
+    <div class="contact__links"><a href="https://www.linkedin.com/in/celiamuntaner/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a><span>Barcelona</span></div>
+  </div>
+</section>
+</main>
+<footer class="site-foot"><span>© <span id="yr">2026</span> Celia Muntaner</span><a href="#top">back to top ↑</a></footer>
+<button class="to-top" type="button" aria-label="Back to top">↑</button>
+<script>
+  // Videos: play silently while visible, pause when scrolled away (like a slide being shown).
+  const vids = [...document.querySelectorAll('video.bgm')];
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); }
+      else { v.pause(); }
+    }
+  }, { threshold: 0.35 });
+  vids.forEach(v => io.observe(v));
+
+  // Sound toggle (only on videos that have audio): one video with sound at a time.
+  document.querySelectorAll('.snd').forEach(btn => {
+    const v = btn.parentElement.querySelector('video');
+    btn.addEventListener('click', () => {
+      const on = v.muted;
+      document.querySelectorAll('.snd').forEach(b => {
+        const o = b.parentElement.querySelector('video'); o.muted = true; b.setAttribute('aria-pressed', 'false');
+        b.setAttribute('aria-label', 'Turn sound on');
+      });
+      if (on) { v.muted = false; v.play().catch(() => {}); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Mute'); }
+    });
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // minimise / restore text cards
+  document.querySelectorAll('.fold').forEach(b => b.addEventListener('click', () => {
+    const c = b.previousElementSibling, min = !b.classList.contains('min');
+    b.classList.toggle('min', min); c.classList.toggle('is-min', min);
+    b.setAttribute('aria-expanded', String(!min)); b.setAttribute('aria-label', min ? 'Show text' : 'Minimise text');
+  }));
+  // fullscreen per slide
+  document.querySelectorAll('.fsb').forEach(b => b.addEventListener('click', () => {
+    const s = b.closest('.slide');
+    if (document.fullscreenElement) document.exitFullscreen(); else (s.requestFullscreen || s.webkitRequestFullscreen)?.call(s);
+  }));
+  const tt = document.querySelector('.to-top');
+  addEventListener('scroll', () => tt.classList.toggle('show', scrollY > innerHeight * .8), { passive:true });
+  tt.addEventListener('click', () => scrollTo({ top:0, behavior:'smooth' }));
+</script>
+</body>
+</html>

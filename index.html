@@ -3,388 +3,278 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>celia muntaner — portfolio</title>
+<meta name="description" content="Portfolio de Celia Muntaner, creative and design brand manager. Barcelona.">
+<meta property="og:title" content="celia muntaner — portfolio">
+<meta property="og:image" content="images/4.jpg">
+<meta name="theme-color" content="#151515">
+<style>
+  @font-face{font-family:"Inter";font-style:normal;font-weight:300;font-display:swap;src:url(fonts/inter-latin-300-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+  @font-face{font-family:"Inter";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+    :root { --ink:#151515; --font:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#151515; font-family:var(--font); -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+  b { font-weight:700; }
 
-<!-- CAMBIAR: descripción y dominio -->
-<title>Celia Muntaner — Dirección de arte</title>
-<meta name="description" content="Dirección de arte para marcas: identidad, packaging y campaña. Del concepto a la imprenta.">
-<link rel="canonical" href="https://ejemplo.com/">
+  /* one Canva page = one slide, 1920x1080 geometry scaled with container units */
+  .slide { background:var(--bg); }
+  .stage { position:relative; width:100%; aspect-ratio:16/9; margin:0 auto;
+           overflow:hidden; container-type:inline-size; }
+  .media, .layer { position:absolute; inset:0; container-type:inline-size; }
+  .layer { pointer-events:none; }
+  .layer > * { pointer-events:auto; }
+  .bgm { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .embed { position:absolute; }
+  .embed iframe { width:100%; height:100%; border:0; display:block; }
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Celia Muntaner — Dirección de arte">
-<meta property="og:description" content="Identidad, packaging y campaña. Del concepto a la imprenta.">
-<meta property="og:image" content="https://ejemplo.com/og.jpg">
-<meta name="twitter:card" content="summary_large_image">
+  .t { position:absolute; margin:0; font-size:calc(var(--fs) * 1cqw / 19.2);
+       hyphens:manual; overflow-wrap:normal; white-space:normal; }
+  .t a { text-underline-offset:.15em; }
+  .c-title, .c-meta, .exp, .hf, .big, .h-name, .contact2 { white-space:nowrap; }
+  .card { position:absolute; border-radius:calc(20cqw / 19.2); }
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23e4007c'/></svg>">
+  /* slide 3 — index */
+  .row { position:absolute; left:calc(68.84cqw / 19.2); width:calc(762.42cqw / 19.2); height:calc(83.5cqw / 19.2);
+         border-top:calc(3cqw / 19.2) solid #fff; text-decoration:none; display:block; }
+  .rn { position:absolute; left:0; font-size:calc(22.158cqw / 19.2); font-weight:700; line-height:1.04; letter-spacing:-.025em;
+        margin-top:calc(-3cqw / 19.2); }
+  .rl { position:absolute; left:calc(67.69cqw / 19.2); width:calc(694.73cqw / 19.2); text-align:right;
+        font-size:calc(58.033cqw / 19.2); font-weight:400; line-height:1.04; letter-spacing:-.09em; margin-top:calc(-3cqw / 19.2); }
+  a.row .rl { transition:opacity .2s; }
+  a.row:hover .rl { opacity:.7; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  /* sound toggle for the videos that have audio */
+  .snd { position:absolute; right:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:3;
+         font:600 12px/1 var(--font); letter-spacing:.02em; color:#fff; background:rgba(21,21,21,.55);
+         border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:8px 12px; cursor:pointer;
+         backdrop-filter:blur(6px); }
+  .snd .off { display:none; }
+  .snd[aria-pressed="true"] .on { display:none; }
+  .snd[aria-pressed="true"] .off { display:inline; }
+  .snd:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+
+  /* site header + footer */
+  .site-head { position:fixed; inset:0 0 auto 0; z-index:20; display:flex; justify-content:space-between; align-items:center;
+               padding:16px clamp(16px,3vw,40px); color:#fff; mix-blend-mode:difference; font-size:14px; font-weight:700; }
+  .site-head a { text-decoration:none; }
+  .site-head nav { display:flex; gap:22px; font-weight:400; }
+  .site-head .lang { font-weight:700; }
+  .site-head nav a:hover { text-decoration:underline; text-underline-offset:4px; }
+  .site-foot { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:22px clamp(16px,3vw,40px);
+               background:#151515; color:#9a9a9a; font-size:13px; border-top:1px solid rgba(255,255,255,.15); }
+  .site-foot a { text-decoration:none; } .site-foot a:hover { color:#79efcf; }
+  html { scroll-padding-top:0; }
+
+  /* minimise text cards: only a "+" remains, moved to the slide corner */
+  .fold { position:absolute; left:var(--ox); top:var(--oy); width:calc(32cqw / 19.2); height:calc(32cqw / 19.2); min-width:20px; min-height:20px;
+          padding:0; border:0; background:none; color:var(--fc); cursor:pointer; z-index:5; font:300 calc(34cqw / 19.2)/1 var(--font);
+          display:grid; place-items:center; }
+  .fold::before { content:"–"; }
+  .fold.min::before { content:"+"; }
+  .fold.min { color:#fff; text-shadow:0 0 6px rgba(0,0,0,.55); font-size:max(22px, calc(44cqw / 19.2)); }
+  .fold.min.c-tl { left:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-tr { left:auto; right:calc(24cqw / 19.2); top:calc(20cqw / 19.2); }
+  .fold.min.c-bl { left:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .fold.min.c-br { left:auto; right:calc(24cqw / 19.2); top:auto; bottom:calc(20cqw / 19.2); }
+  .card { transition:opacity .25s; }
+  .card.is-min { opacity:0; pointer-events:none; }
+  .fold:focus-visible { outline:2px solid #79efcf; outline-offset:2px; }
+
+  /* fullscreen */
+  .fsb { position:absolute; left:calc(24cqw / 19.2); bottom:calc(24cqw / 19.2); z-index:4; width:34px; height:34px; border-radius:50%;
+         border:1px solid rgba(255,255,255,.45); background:rgba(21,21,21,.45); cursor:pointer; opacity:0; transition:opacity .2s;
+         background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E");
+         background-size:16px; background-repeat:no-repeat; background-position:center; }
+  .slide:hover .fsb, .fsb:focus-visible { opacity:1; }
+  .slide:fullscreen { display:flex; align-items:center; justify-content:center; background:var(--bg); }
+  .slide:fullscreen .stage { width:min(100vw, calc(100vh * 16 / 9)); }
+
+
+  /* ---- restored website top / about / contact (first version) ---- */
+  .wrap { max-width:1440px; margin:0 auto; padding:0 clamp(16px,4vw,56px); }
+  .label { font-size:13px; font-weight:600; margin:0 0 20px; }
+  .h2 { font-size:clamp(34px,4.5vw,60px); font-weight:500; letter-spacing:-.04em; line-height:1; margin:0 0 28px; }
+  .btn { display:inline-block; margin-top:12px; padding:12px 20px; border:1px solid currentColor; border-radius:999px;
+         font-size:14px; font-weight:600; text-decoration:none; transition:background .2s,color .2s; }
+  .btn:hover { background:#151515; color:#e7e7e9; }
+  .hero { min-height:100svh; display:flex; flex-direction:column; justify-content:center; position:relative;
+          padding:90px clamp(16px,4vw,56px) 32px; background:#151515; color:#fff; }
+  .hero__role { position:absolute; top:86px; right:clamp(16px,4vw,56px); text-align:right; font-size:14px; margin:0; }
+  .hero__title { font-size:clamp(64px,15vw,240px); font-weight:800; letter-spacing:-.06em; line-height:.86; margin:0; }
+  .hero__foot { position:absolute; left:clamp(16px,4vw,56px); right:clamp(16px,4vw,56px); bottom:28px;
+                display:flex; justify-content:space-between; font-size:14px; }
+  .hero__cta { color:#79efcf; text-decoration:none; font-weight:600; }
+  .about { padding:clamp(72px,10vw,140px) 0; background:#e7e7e9; color:#151515; font-size:17px; line-height:1.55; }
+  .about p { margin:0 0 1em; }
+  .about__grid { display:grid; gap:clamp(32px,5vw,72px); grid-template-columns:1.3fr 1fr .9fr; align-items:start; }
+  .about__bio p { max-width:58ch; }
+  .exp-list { list-style:none; padding:0; margin:0 0 20px; }
+  .exp-list li { display:grid; padding:16px 0; border-top:1px solid rgba(0,0,0,.18); }
+  .exp-list li:last-child { border-bottom:1px solid rgba(0,0,0,.18); }
+  .exp-list .r { font-weight:700; } .exp-list .d { color:#5f5f63; font-size:14px; }
+  .about__photo { margin:0; aspect-ratio:391.47/487.23; width:100%; background:#cfcfd2 url("images/2.jpg") no-repeat;
+                  background-size:490.46% auto; background-position:92.94% 43.03%; }
+  .contact { padding:clamp(96px,14vw,200px) 0; text-align:center; background:#151515; color:#fff; }
+  .contact .label { color:#9a9a9a; }
+  .contact__mail { display:inline-block; font-size:clamp(28px,7vw,104px); font-weight:800; letter-spacing:-.05em; line-height:1;
+                   text-decoration:none; word-break:break-word; }
+  .contact__mail:hover { color:#79efcf; }
+  .contact__links { margin-top:36px; display:flex; gap:28px; justify-content:center; flex-wrap:wrap; font-size:15px; }
+  .contact__links a { text-decoration:none; } .contact__links a:hover { color:#79efcf; }
+  @media (max-width:1000px) { .about__grid { grid-template-columns:1fr 1fr; } .about__bio { grid-column:1/-1; } }
+  @media (max-width:640px) { .about__grid { grid-template-columns:1fr; } .about__photo { max-width:360px; }
+                             .hero__role { top:70px; } .site-head .home { display:none; } }
+
+  /* back to top */
+  .to-top { position:fixed; right:clamp(14px,2vw,28px); bottom:clamp(14px,2vw,28px); z-index:30; width:40px; height:40px;
+            border-radius:50%; border:1px solid rgba(255,255,255,.4); background:rgba(21,21,21,.6); color:#fff; cursor:pointer;
+            display:grid; place-items:center; font:400 18px/1 var(--font); backdrop-filter:blur(6px);
+            opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .25s, transform .25s; }
+  .to-top.show { opacity:1; transform:none; pointer-events:auto; }
+  .to-top:hover { background:#79efcf; color:#151515; border-color:#79efcf; }
+
+  /* phones: keep each slide's media exactly as in Canva, text flows below it at a readable size */
+  @media (max-width: 700px) {
+    .stage { width:100%; aspect-ratio:auto; overflow:visible; }
+    .media { position:relative; inset:auto; aspect-ratio:16/9; overflow:hidden; }
+    .k-none .media { display:none; }
+    .layer { position:relative; inset:auto; padding:20px 16px 28px; display:flex; flex-direction:column; gap:10px; }
+    .k-none .layer { padding:32px 16px 36px; min-height:auto; }
+    .t { position:static; width:auto !important; font-size:max(13px, calc(var(--fs) * .56px)); }
+    .t.big { font-size:15vw; margin:24px 0; }
+    .t.big-mail { font-size:7.4vw; }
+    .t.h-name { font-size:36px; }
+    .t.bio { text-align:left !important; }
+    .c-title, .exp, .hf, .h-name { white-space:normal; }
+    .t.star { display:none; }
+    .card { position:static; width:auto !important; height:auto !important; border-radius:12px;
+            padding:18px 18px 16px; display:flex; flex-wrap:wrap; gap:10px 0; }
+    .card .t { width:100% !important; }
+    .card .c-desc { text-align:left !important; }
+    .card .c-meta { width:50% !important; }
+    .snd { right:10px; bottom:10px; }
+    .fold, .fsb { display:none; }
+    .card.is-min { opacity:1; pointer-events:auto; }
+    .site-head { font-size:13px; } .site-head nav { gap:14px; }
+    .row { position:static; width:auto; height:auto; display:flex; justify-content:space-between; align-items:baseline;
+           gap:12px; padding:8px 0; border-top-width:2px; }
+    .rn, .rl { position:static; margin:0; width:auto; }
+    .rn { font-size:12px; }
+    .rl { font-size:clamp(22px, 7.5vw, 34px); }
+    .has-mcrop .media { aspect-ratio:calc(var(--mc-w) / var(--mc-h)); width:58%; margin:24px auto 0; }
+    .has-mcrop .bgm { inset:auto; width:calc(1920 / var(--mc-w) * 100%); height:auto; max-width:none;
+                      left:calc(var(--mc-x) / var(--mc-w) * -100%); top:calc(var(--mc-y) / var(--mc-h) * -100%); object-fit:fill; }
+  }
+</style>
 </head>
 <body>
-
-<a class="saltar" href="#trabajo">Ir a los proyectos</a>
-
-<!-- Portadas de proyecto. Se dibujan una vez y se reutilizan en el
-     mosaico, el desfile y el índice. Cuando tengas fotos reales,
-     borra este bloque y usa <img> en su lugar. -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="p-sal" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#1b3fcb"/>
-    <g stroke="#e4e5e1" stroke-width="2.5" fill="none" opacity="0.85">
-      <path d="M0 320 Q 100 296 200 320 T 400 320"/>
-      <path d="M0 344 Q 100 320 200 344 T 400 344"/>
-      <path d="M0 368 Q 100 344 200 368 T 400 368"/>
-      <path d="M0 392 Q 100 368 200 392 T 400 392"/>
-      <path d="M0 416 Q 100 392 200 416 T 400 416"/>
-      <path d="M0 440 Q 100 416 200 440 T 400 440"/>
-      <path d="M0 464 Q 100 440 200 464 T 400 464"/>
-    </g>
-    <circle cx="200" cy="180" r="72" fill="#ffc800"/>
-    <rect x="194" y="0" width="12" height="96" fill="#e4007c"/>
-  </symbol>
-
-  <symbol id="p-nocturna" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#1b1c1e"/>
-    <g fill="none" stroke="#e4007c" stroke-width="3.5">
-      <circle cx="200" cy="250" r="42"/>
-      <circle cx="200" cy="250" r="86"/>
-      <circle cx="200" cy="250" r="130"/>
-      <circle cx="200" cy="250" r="174"/>
-    </g>
-    <path d="M0 250h400" stroke="#ffc800" stroke-width="3.5"/>
-    <circle cx="200" cy="250" r="13" fill="#ffc800"/>
-  </symbol>
-
-  <symbol id="p-bruma" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#e4e5e1"/>
-    <g style="mix-blend-mode:multiply">
-      <circle cx="150" cy="230" r="108" fill="#1b3fcb" opacity="0.88"/>
-      <circle cx="250" cy="300" r="108" fill="#e4007c" opacity="0.88"/>
-    </g>
-    <rect x="0" y="456" width="400" height="44" fill="#1b1c1e"/>
-  </symbol>
-
-  <symbol id="p-casa" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#ffc800"/>
-    <g fill="#1b1c1e">
-      <rect x="40"  y="80"  width="60" height="60"/>
-      <rect x="124" y="80"  width="60" height="60"/>
-      <rect x="292" y="80"  width="60" height="60"/>
-      <rect x="40"  y="164" width="60" height="60"/>
-      <rect x="208" y="164" width="60" height="60"/>
-      <rect x="292" y="164" width="60" height="60"/>
-      <rect x="124" y="248" width="60" height="60"/>
-      <rect x="208" y="248" width="60" height="60"/>
-      <rect x="40"  y="332" width="60" height="60"/>
-      <rect x="292" y="332" width="60" height="60"/>
-    </g>
-    <rect x="208" y="80" width="60" height="60" fill="#e4007c"/>
-  </symbol>
-
-  <symbol id="p-turno" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#e4007c"/>
-    <g fill="#e4e5e1">
-      <rect x="48" y="150" width="240" height="40" rx="20"/>
-      <rect x="48" y="212" width="168" height="40" rx="20"/>
-      <rect x="48" y="274" width="288" height="40" rx="20"/>
-    </g>
-    <circle cx="320" cy="232" r="26" fill="#1b3fcb"/>
-  </symbol>
-
-  <symbol id="p-ronda" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#e4e5e1"/>
-    <circle cx="200" cy="250" r="140" fill="none" stroke="#e4007c" stroke-width="44"/>
-    <g fill="#1b1c1e">
-      <rect x="60" y="236" width="280" height="12"/>
-      <rect x="60" y="266" width="180" height="12"/>
-    </g>
-    <rect x="0" y="0" width="400" height="34" fill="#1b3fcb"/>
-  </symbol>
-
-  <symbol id="p-tramas" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#1b1c1e"/>
-    <g fill="#ffc800">
-      <rect x="0" y="60"  width="400" height="26"/>
-      <rect x="0" y="140" width="280" height="26"/>
-      <rect x="0" y="220" width="360" height="26"/>
-      <rect x="0" y="300" width="180" height="26"/>
-      <rect x="0" y="380" width="320" height="26"/>
-    </g>
-    <circle cx="330" cy="410" r="46" fill="#e4007c"/>
-  </symbol>
-
-  <symbol id="p-prueba" viewBox="0 0 400 500">
-    <rect width="400" height="500" fill="#1b3fcb"/>
-    <g fill="#e4e5e1">
-      <circle cx="120" cy="150" r="56"/>
-      <circle cx="280" cy="150" r="56"/>
-      <circle cx="120" cy="330" r="56"/>
-    </g>
-    <circle cx="280" cy="330" r="56" fill="#ffc800"/>
-  </symbol>
-</svg>
-
-<!-- ==========  1 · PORTADA  ========================== -->
-<header class="portada">
-
-  <!-- VÍDEO DE PORTADA
-       Sustituye este <div> por:
-       <video class="portada__media" autoplay muted loop playsinline
-              preload="metadata" poster="img/portada.webp">
-         <source src="img/portada.webm" type="video/webm">
-         <source src="img/portada.mp4"  type="video/mp4">
-       </video>
-       Bucle corto, sin audio, máximo 1280 px de ancho y 2 MB. -->
-  <div class="portada__media" aria-hidden="true">
-    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-      <rect width="1600" height="900" fill="#1b3fcb"/>
-      <circle cx="1180" cy="300" r="260" fill="#e4007c"/>
-      <circle cx="480" cy="640" r="200" fill="#ffc800"/>
-      <g stroke="#e4e5e1" stroke-width="3" fill="none" opacity="0.5">
-        <path d="M0 720 Q 400 660 800 720 T 1600 720"/>
-        <path d="M0 780 Q 400 720 800 780 T 1600 780"/>
-        <path d="M0 840 Q 400 780 800 840 T 1600 840"/>
-      </g>
-    </svg>
+<header class="site-head"><a class="home" href="#top">celia muntaner</a><nav aria-label="Principal"><a href="#sobre-mi">sobre mí</a><a href="#s3">proyectos</a><a href="#contacto">contacto</a><a class="lang" href="en.html" lang="en">EN</a></nav></header>
+<main id="top">
+<section class="hero">
+  <p class="hero__role">creative and design<br>brand manager</p>
+  <h1 class="hero__title">celia<br>muntaner</h1>
+  <div class="hero__foot"><span>Barcelona</span><a href="#s3" class="hero__cta">ver portfolio ↓</a></div>
+</section>
+<section id="sobre-mi" class="about">
+  <div class="wrap about__grid">
+    <div class="about__bio">
+      <h2 class="h2">sobre mí</h2>
+      <p><strong>Directora creativa y de arte</strong> con más de 6 años de experiencia, especializada en el sector de la cosmética y el skincare.</p>
+      <p>Mi actual proyecto es <strong>Binomial skincare</strong>, una marca de dermocosmética de mesoestetic Pharma Group. Involucrada desde la fase previa al lanzamiento de la marca, liderando la dirección creativa, la identidad visual y la estrategia de la marca. Conceptualizo campañas y su desarrollo en diferentes canales (social, paid, web, offline…).</p>
+      <p>Además, desarrollo funciones de Brand Manager: participo en la implementación de estrategias de marca, desde el rendimiento de ventas y los canales de distribución hasta la comunicación directa con agencias y proveedores.</p>
+      <p>Poseo experiencia previa en agencia que me aportó una visión transversal del sector creativo y una excelente capacidad de respuesta ante grandes ritmos de trabajo.</p>
+    </div>
+    <div>
+      <h3 class="label">experiencia</h3>
+      <ol class="exp-list">
+        <li><span class="r">Creativity and Design Manager</span><span>Binomial (mesoestetic Pharma Group)</span><span class="d">abr. 2024 — actualidad</span></li>
+        <li><span class="r">Mid Art Director</span><span>Multiplica (fusión beAgency)</span><span class="d">mar. 2022 — abr. 2024</span></li>
+        <li><span class="r">Art Director</span><span>beAgency</span><span class="d">oct. 2020 — mar. 2022</span></li>
+      </ol>
+      <a class="btn" href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">descargar cv completo ↗</a>
+    </div>
+    <figure class="about__photo" role="img" aria-label="Retrato de Celia Muntaner"></figure>
   </div>
-
-  <div class="portada__barra">
-    <p class="portada__lema">Dirección de arte para marcas que necesitan verse antes de explicarse.</p>
-    <a class="portada__enlace" href="#trabajo">/Trabajo</a>
+</section>
+<section class="slide k-none" id="s3" style="--bg:#151515" aria-label="Diapositiva 3"><div class="stage"><div class="media"></div><div class="layer"><a href="#s4" class="row" style="top:15.1927cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">001</span><span class="rl" style="top:0.4464cqw;color:#79efcf">branding y packaging</span></a><a href="#s10" class="row" style="top:19.5427cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">002</span><span class="rl" style="top:0.4464cqw;color:#79efcf">evento lanzamiento</span></a><a href="#s14" class="row" style="top:23.8927cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">003</span><span class="rl" style="top:0.4464cqw;color:#79efcf">contenido generado con IA</span></a><a href="#s17" class="row" style="top:28.2427cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">004</span><span class="rl" style="top:0.4464cqw;color:#79efcf">campañas</span></a><a href="#s20" class="row" style="top:32.6177cqw"><span class="rn" style="top:1.5641cqw;color:#79efcf">005</span><span class="rl" style="top:0.4464cqw;color:#79efcf">creative content</span></a><a href="#s21" class="row" style="top:36.9849cqw"><span class="rn" style="top:1.5646cqw;color:#79efcf">006</span><span class="rl" style="top:0.4464cqw;color:#79efcf">activaciones offline</span></a><a href="#s23" class="row" style="top:41.3526cqw"><span class="rn" style="top:1.5641cqw;color:#fff">007</span><span class="rl" style="top:0.4464cqw;color:#fff">levi’s</span></a><a href="#s25" class="row" style="top:45.7198cqw"><span class="rn" style="top:1.5646cqw;color:#fff">007</span><span class="rl" style="top:0.4464cqw;color:#fff">rilastil</span></a><div class="row" style="top:50.0875cqw"><span class="rn" style="top:1.5641cqw;color:#fff">007</span><span class="rl" style="top:0.4458cqw;color:#fff">ribs</span></div></div></div></section>
+<section class="slide k-img" id="s4" style="--bg:#ffffff" aria-label="Diapositiva 4"><div class="stage"><div class="media"><img class="bgm" src="images/4.jpg" alt="Diapositiva 4" loading="lazy" decoding="async"></div><div class="layer"><p class="t " style="left:3.3661cqw;top:19.9677cqw;width:19.9198cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">Desde mesoestetic Pharma group® nace la necesidad de crear una marca de skincare enfocada a la Gen Z. Junto a la agencia Morillas, se define y desarrolla toda la estrategia, con un enfoque 100% digital y trasgesor.</p><p class="t " style="left:26.2260cqw;top:19.9677cqw;width:16.9802cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">Al incorporar al equipo interno dedicado a la marca (momento en el que me incorporé) se hace un traspaso de proyecto y se centraliza en el nuevo team.</p><p class="t " style="left:3.3661cqw;top:36.5385cqw;width:39.8396cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">Desde entonces, se ha desarrollado la marca desde el equipo, ajustando la estrategia y elaborando planes de acción para la optimización de recursos y la rentabilidad de esta.</p><p class="t " style="left:3.3661cqw;top:45.0370cqw;width:39.8396cqw;--fs:26.667;font-weight:400;text-align:justify;line-height:1.17;letter-spacing:0em;color:#151515">Mi papel en el equipo pasó de ser diseñadora gráfica a liderar toda la parte conceptual y creativa de la marca, definiendo su identidad y dotándola de contenido para su crecimiento y expansión en el mercado, manteniendo su esencia y su razón de ser como marca.</p></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s5" style="--bg:#151515" aria-label="Diapositiva 5"><div class="stage"><div class="media"><video class="bgm" src="media/5.mp4" poster="media/5-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Activar sonido" aria-pressed="false"><span class="on">sonido</span><span class="off">silenciar</span></button></div><div class="layer"><div class="card" style="left:53.6615cqw;top:33.7500cqw;width:40.7135cqw;height:16.8750cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(001) Video Manifesto</p><p class="t c-desc" style="left:1.6677cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Video presentación de la marca y el portfolio de productos, con un estilo visual, inspirado en lo que conecta con la Generación Z, refleja en cada detalle la misión de Binomial: cuidado de la piel simple y efectivo.</p><p class="t c-meta" style="left:1.6677cqw;top:13.9734cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Agencia Morillas</p><p class="t c-meta c-meta-r" style="left:20.1193cqw;top:13.9734cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Abril-Septiembre 2024</p></div><button class="fold c-br" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:92.0833cqw;--oy:34.3750cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s6" style="--bg:#e7e7e9" aria-label="Diapositiva 6"><div class="stage"><div class="media"><img class="bgm" src="images/6.jpg" alt="Diapositiva 6" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:3.3375cqw;top:4.8964cqw;width:39.7422cqw;height:13.7906cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6260cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(002) Packaging</p><p class="t c-desc" style="left:1.6672cqw;top:4.4068cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Conceptualización y desarrollo de los AAFF de primarios y secundarios de toda la gama. Contacto con proveedores y seguimiento de la fabricación.</p><p class="t c-meta" style="left:1.6672cqw;top:10.3406cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Orriols Packaging</p><p class="t c-meta c-meta-r" style="left:20.1188cqw;top:10.3406cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Abril-Septiembre 2024</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:40.7880cqw;--oy:5.5214cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s7" style="--bg:#151515" aria-label="Diapositiva 7"><div class="stage"><div class="media"><img class="bgm" src="media/7.gif" alt="Diapositiva 7" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:7.9005cqw;top:38.9932cqw;width:40.7135cqw;height:13.9964cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(003) Shooting</p><p class="t c-desc" style="left:1.6677cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Dirección conceptual y de arte del shooting inicial de marca, incluyendo bodegón de producto, interacción con modelo y foco en textura de producto.</p><p class="t c-meta" style="left:1.6677cqw;top:10.5630cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Agencia Morillas</p><p class="t c-meta c-meta-r" style="left:20.1193cqw;top:10.5630cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Abril-Septiembre 2024</p></div><button class="fold c-bl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:46.3224cqw;--oy:39.6182cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s8" style="--bg:#151515" aria-label="Diapositiva 8"><div class="stage"><div class="media"><img class="bgm" src="images/8.jpg" alt="Diapositiva 8" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s9" style="--bg:#151515" aria-label="Diapositiva 9"><div class="stage"><div class="media"><img class="bgm" src="images/9.jpg" alt="Diapositiva 9" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:55.1917cqw;top:4.6724cqw;width:40.7135cqw;height:12.7646cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6266cqw;width:31.9615cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(004) Página web y contenidos digitales</p><p class="t c-desc" style="left:1.6672cqw;top:4.9208cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Diseño de e-commerce junto con tbb agency. Conceptualización de UX y look and feel del website.</p><p class="t c-meta" style="left:1.6672cqw;top:9.2089cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">tbb agency</p><p class="t c-meta c-meta-r" style="left:20.1187cqw;top:9.2089cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Abril-Septiembre 2024</p></div><button class="fold c-tr" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:93.6135cqw;--oy:5.2974cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s10" style="--bg:#e7e7e9" aria-label="Diapositiva 10"><div class="stage"><div class="media"><img class="bgm" src="images/10.jpg" alt="Diapositiva 10" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:55.6901cqw;top:34.3057cqw;width:40.7135cqw;height:19.6938cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:2.5427cqw;width:20.4474cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(005) Evento lanzamineto</p><p class="t c-desc" style="left:1.6672cqw;top:5.7604cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Construcción de pop-up experiencial en Madrid, con un espacio dediacado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.</p><p class="t c-meta" style="left:1.6672cqw;top:16.7354cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Pelonio</p><p class="t c-meta c-meta-r" style="left:20.1187cqw;top:16.7354cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Octubre 2024</p></div><button class="fold c-br" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:94.1120cqw;--oy:34.9307cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s11" style="--bg:#e7e7e9" aria-label="Diapositiva 11"><div class="stage"><div class="media"><video class="bgm" src="media/11.mp4" poster="media/11-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Activar sonido" aria-pressed="false"><span class="on">sonido</span><span class="off">silenciar</span></button></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s12" style="--bg:#e7e7e9" aria-label="Diapositiva 12"><div class="stage"><div class="media"><video class="bgm" src="media/12.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s13" style="--bg:#e7e7e9" aria-label="Diapositiva 13"><div class="stage"><div class="media"><video class="bgm" src="media/13.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s14" style="--bg:#e7e7e9" aria-label="Diapositiva 14"><div class="stage"><div class="media"><img class="bgm" src="images/14.jpg" alt="Diapositiva 14" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:56.2469cqw;top:18.2646cqw;width:40.7135cqw;height:15.8031cqw;background:#79efcf"><p class="t c-title" style="left:1.6672cqw;top:1.6266cqw;width:33.8542cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(006) AI generated content</p><p class="t c-desc" style="left:2.1745cqw;top:5.7026cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Creación de contenido con IA y automatizacione sen la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.</p><p class="t c-meta" style="left:2.1745cqw;top:12.2526cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Nano Banana y Figma</p><p class="t c-meta c-meta-r" style="left:20.6260cqw;top:12.2526cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">2026</p></div><button class="fold c-tr" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:94.6688cqw;--oy:18.8896cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s15" style="--bg:#e7e7e9" aria-label="Diapositiva 15"><div class="stage"><div class="media"><img class="bgm" src="images/15.jpg" alt="Diapositiva 15" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s16" style="--bg:#e7e7e9" aria-label="Diapositiva 16"><div class="stage"><div class="media"><img class="bgm" src="images/16.jpg" alt="Diapositiva 16" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s17" style="--bg:#e7e7e9" aria-label="Diapositiva 17"><div class="stage"><div class="media"><video class="bgm" src="media/17.mp4" poster="media/17-poster.jpg" muted loop playsinline preload="none"></video><button class="snd" type="button" aria-label="Activar sonido" aria-pressed="false"><span class="on">sonido</span><span class="off">silenciar</span></button></div><div class="layer"><div class="card" style="left:55.5667cqw;top:3.1089cqw;width:40.7135cqw;height:18.4531cqw;background:#79efcf"><p class="t c-title" style="left:1.6677cqw;top:1.6266cqw;width:33.8542cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(007) Campaña “El mejor polvo de tu vida”</p><p class="t c-desc" style="left:1.7906cqw;top:4.6042cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en, el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizaco) y offline (wildposting)</p><p class="t c-meta" style="left:1.7906cqw;top:15.3510cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Neven productora</p><p class="t c-meta c-meta-r" style="left:20.2422cqw;top:15.3510cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">Marzo 2025</p></div><button class="fold c-tr" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:93.9885cqw;--oy:3.7339cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s18" style="--bg:#e7e7e9" aria-label="Diapositiva 18"><div class="stage"><div class="media"><img class="bgm" src="images/18.jpg" alt="Diapositiva 18" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s19" style="--bg:#e7e7e9" aria-label="Diapositiva 19"><div class="stage"><div class="media"><video class="bgm" src="media/19.mp4" poster="media/19-poster.jpg" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s20" style="--bg:#e7e7e9" aria-label="Diapositiva 20"><div class="stage"><div class="media"><video class="bgm" src="media/20.mp4" poster="media/20-poster.jpg" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"><div class="card" style="left:3.9005cqw;top:3.9547cqw;width:40.3177cqw;height:13.8943cqw;background:#79efcf"><p class="t c-title" style="left:2.0849cqw;top:1.8995cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(008) Digital content</p><p class="t c-desc" style="left:2.0849cqw;top:5.7693cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.12;letter-spacing:0em;color:#151515">Creación de contenido inhouse, con enfoque más científico y educativo o con un enfoque más de lifestyle y de estilo de vida, siguiendo los trends y las últimas novedades en social media.</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:41.9266cqw;--oy:4.5797cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s21" style="--bg:#e7e7e9" aria-label="Diapositiva 21"><div class="stage"><div class="media"><img class="bgm" src="images/21.jpg" alt="Diapositiva 21" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:27.5005cqw;top:3.7260cqw;width:40.3177cqw;height:16.0708cqw;background:#79efcf"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#151515">(009) Activaciones offline</p><p class="t c-desc" style="left:2.0849cqw;top:5.7688cqw;width:35.8885cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Coordinación de acciones en entornos offline como samplings y markets. También activaciones cobrandeadas con marcas afines del sector health y fitness.</p><p class="t c-meta" style="left:2.0849cqw;top:12.3187cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#151515">Diferentes proveedores</p><p class="t c-meta c-meta-r" style="left:20.5365cqw;top:12.3187cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#151515">2026</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:65.5266cqw;--oy:4.3510cqw;--fc:#151515"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s22" style="--bg:#e7e7e9" aria-label="Diapositiva 22"><div class="stage"><div class="media"><img class="bgm" src="images/22.jpg" alt="Diapositiva 22" loading="lazy" decoding="async"></div><div class="layer"></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-embed" id="s23" style="--bg:#e7e7e9" aria-label="Diapositiva 23"><div class="stage"><div class="media"><div class="embed" style="left:0.0000cqw;top:0.0000cqw;width:99.8438cqw;height:56.2500cqw"><iframe src="https://player.vimeo.com/video/760811572?title=0&byline=0&portrait=0&dnt=1" title="Levi’s - Social Live Shopping" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div></div><div class="layer"><div class="card" style="left:5.6250cqw;top:5.6250cqw;width:28.5177cqw;height:34.0573cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(010) Levi’s</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Social Live Shopping</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la carteleria y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.</p><p class="t c-meta" style="left:2.0849cqw;top:30.2318cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:30.2318cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2021</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:31.8510cqw;--oy:6.2500cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-img" id="s24" style="--bg:#e7e7e9" aria-label="Diapositiva 24"><div class="stage"><div class="media"><img class="bgm" src="images/24.jpg" alt="Diapositiva 24" loading="lazy" decoding="async"></div><div class="layer"><div class="card" style="left:5.6250cqw;top:4.4234cqw;width:28.5177cqw;height:18.8203cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(010) Levi’s</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Social Media</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Diseño y animación de creatividades para los diferentes canales nacionales de la marca.</p><p class="t c-meta" style="left:2.0849cqw;top:14.7245cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:14.7245cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:31.8510cqw;--oy:5.0484cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-embed" id="s25" style="--bg:#e7e7e9" aria-label="Diapositiva 25"><div class="stage"><div class="media"><div class="embed" style="left:0.0000cqw;top:0.0437cqw;width:100.0000cqw;height:56.2063cqw"><iframe src="https://www.youtube-nocookie.com/embed/CMqaot85DZw?rel=0&modestbranding=1" title="Rilastil Official skin care & sun protection of FC Barcelona Women" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div></div><div class="layer"><div class="card" style="left:5.6250cqw;top:4.4234cqw;width:28.5177cqw;height:26.1948cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(011) Rilastil</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Patrocinio Barça Femenino</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content  con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias.</p><p class="t c-meta" style="left:2.0849cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency - Multiplica</p><p class="t c-meta c-meta-r" style="left:8.3927cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-tl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:31.8510cqw;--oy:5.0484cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section class="slide k-video" id="s26" style="--bg:#e7e7e9" aria-label="Diapositiva 26"><div class="stage"><div class="media"><video class="bgm" src="media/27.mp4" muted loop playsinline preload="none" disablepictureinpicture></video></div><div class="layer"><div class="card" style="left:1.8443cqw;top:15.0276cqw;width:28.5177cqw;height:26.1948cqw;background:#151515"><p class="t c-title" style="left:2.0849cqw;top:1.8990cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">(011) Rilastil</p><p class="t c-title" style="left:2.0849cqw;top:4.7630cqw;width:21.4589cqw;--fs:32;font-weight:700;text-align:start;line-height:1;letter-spacing:0em;color:#fff">Patrocinio Barça Femenino</p><p class="t c-desc" style="left:2.0849cqw;top:7.6484cqw;width:24.5469cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1.14;letter-spacing:0em;color:#fff">Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content  con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias.</p><p class="t c-meta" style="left:2.0849cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:justify;line-height:1;letter-spacing:0em;color:#fff">beAgency - Multiplica</p><p class="t c-meta c-meta-r" style="left:8.3932cqw;top:22.0698cqw;width:17.4370cqw;--fs:26.667;font-weight:300;text-align:end;line-height:1;letter-spacing:0em;color:#fff">2023</p></div><button class="fold c-bl" type="button" aria-label="Minimizar texto" aria-expanded="true" style="--ox:28.0703cqw;--oy:15.6526cqw;--fc:#fff"></button></div><button class="fsb" type="button" aria-label="Pantalla completa"></button></div></section>
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <p class="label">contacto</p>
+    <a class="contact__mail" href="mailto:celiamuntaner@gmail.com">celiamuntaner@gmail.com</a>
+    <div class="contact__links"><a href="https://www.linkedin.com/in/celiamuntaner/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing" target="_blank" rel="noopener">CV ↗</a><span>Barcelona</span></div>
   </div>
-
-  <h1 class="portada__nombre">celia muntaner</h1>
-</header>
-
-<main>
-
-  <!-- ==========  2 · MOSAICO  ========================= -->
-  <!-- Cada pieza muestra solo la imagen. Al pasar el ratón,
-       la imagen desaparece y queda el texto sobre el fondo. -->
-  <section class="mosaico" id="trabajo">
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Sal de Garraf"><use href="#p-sal"/></svg>
-          <span class="pieza__cliente">Sal de Garraf</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Sal de Garraf</h3>
-          <p class="pieza__tipo">Identidad y packaging · 2025</p>
-          <p class="pieza__reto"><b>El reto:</b> una salina familiar con noventa años de historia vendía a granel y sin nombre propio. Había que entrar en tienda gourmet sin parecer una marca recién inventada, y con un presupuesto que solo daba para dos tintas.</p>
-        </div>
-      </a>
-    </figure>
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Nocturna 24"><use href="#p-nocturna"/></svg>
-          <span class="pieza__cliente">Nocturna 24</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Nocturna 24</h3>
-          <p class="pieza__tipo">Sistema visual de festival · 2024</p>
-          <p class="pieza__reto"><b>El reto:</b> un festival que cambia de sede cada año necesitaba una identidad reconocible igual en un cartel de calle, en una pulsera de tela y en un story vertical, y que el equipo interno pudiera adaptar sin diseñador.</p>
-        </div>
-      </a>
-    </figure>
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Bruma"><use href="#p-bruma"/></svg>
-          <span class="pieza__cliente">Bruma</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Bruma</h3>
-          <p class="pieza__tipo">Campaña de lanzamiento · 2024</p>
-          <p class="pieza__reto"><b>El reto:</b> un café de especialidad entraba en un lineal donde todas las bolsas eran kraft y tipografía de máquina de escribir. La campaña tenía que funcionar en exterior y en Reels con la misma pieza gráfica.</p>
-        </div>
-      </a>
-    </figure>
-
-    <h2 class="corte">
-      <span>Que aguante</span>
-      <span>en la etiqueta</span>
-      <span>y en la lona</span>
-    </h2>
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Casa Común"><use href="#p-casa"/></svg>
-          <span class="pieza__cliente">Casa Común</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Casa Común</h3>
-          <p class="pieza__tipo">Campaña social · 2023</p>
-          <p class="pieza__reto"><b>El reto:</b> hablar de vivienda sin recurrir a la iconografía de la pobreza. Buscábamos una imagen que interpelara al votante sin retratar a nadie, y que se pudiera imprimir en fotocopia sin perder fuerza.</p>
-        </div>
-      </a>
-    </figure>
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Turno"><use href="#p-turno"/></svg>
-          <span class="pieza__cliente">Turno</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Turno</h3>
-          <p class="pieza__tipo">Dirección de arte digital · 2023</p>
-          <p class="pieza__reto"><b>El reto:</b> una app de citas médicas usada sobre todo por mayores de sesenta y cinco años. Cualquier decisión estética tenía que pasar antes por la legibilidad, el contraste y el tamaño mínimo de toque.</p>
-        </div>
-      </a>
-    </figure>
-
-    <figure class="pieza">
-      <a href="proyecto-sal-de-garraf.html">
-        <div class="pieza__marco">
-          <svg viewBox="0 0 400 500" role="img" aria-label="Ronda"><use href="#p-ronda"/></svg>
-          <span class="pieza__cliente">Ronda</span>
-        </div>
-        <div class="pieza__reverso">
-          <h3 class="pieza__titulo">Ronda</h3>
-          <p class="pieza__tipo">Sistema editorial · 2022</p>
-          <p class="pieza__reto"><b>El reto:</b> una revista de barrio hecha por voluntarios, con maquetadores distintos cada número. La solución fue una retícula corta y cinco plantillas cerradas que sobreviven al cambio de manos.</p>
-        </div>
-      </a>
-    </figure>
-
-    <p class="apunte">Trabajo sola o dirigiendo equipo, según lo que pida el encargo. Entro pronto, en la conversación de estrategia, y me quedo hasta la prueba de color.</p>
-
-  </section>
-
-  <!-- ==========  3 · DECLARACIÓN  ===================== -->
-  <section class="declaracion" id="sobre">
-    <h2>Del concepto<br>a la imprenta</h2>
-    <p>Ocho años dirigiendo el aspecto de marcas de consumo, cultura y sector público, entre agencia y estudio propio. Territorio visual, sistema tipográfico, dirección de fotografía y control de color en máquina. Me interesa que el equipo que hereda una marca pueda seguir usándola sin mí.</p>
-  </section>
-
-  <!-- ==========  4 · DESFILE  ========================= -->
-  <!-- Dos columnas de imágenes sin texto. Al hacer scroll, la
-       izquierda sube y la derecha baja. El script está al final. -->
-  <section class="desfile" aria-label="Imágenes de archivo">
-
-    <div class="desfile__col" data-desfile="sube">
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-sal"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-casa"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-tramas"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-bruma"/></svg></figure>
-    </div>
-
-    <div class="desfile__col" data-desfile="baja">
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-nocturna"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-prueba"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-turno"/></svg></figure>
-      <figure><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-ronda"/></svg></figure>
-    </div>
-
-  </section>
-
-  <!-- ==========  5 · ÍNDICE COMPLETO  ================= -->
-  <section class="indice">
-    <div class="indice__esquinas">
-      <a class="indice__marca" href="#top">celia muntaner</a>
-      <a class="indice__contacto" href="#contacto">[Contacto]</a>
-    </div>
-
-    <ul class="lista">
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2025</span>
-        <span class="lista__nombre">Sal de Garraf * Identidad</span>
-        <span class="lista__disciplina">Packaging</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-sal"/></svg></span>
-      </a></li>
-
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2024</span>
-        <span class="lista__nombre">Nocturna 24 * Sistema visual</span>
-        <span class="lista__disciplina">Festival</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-nocturna"/></svg></span>
-      </a></li>
-
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2024</span>
-        <span class="lista__nombre">Bruma * Lanzamiento</span>
-        <span class="lista__disciplina">Campaña</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-bruma"/></svg></span>
-      </a></li>
-
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2023</span>
-        <span class="lista__nombre">Casa Común * Vivienda</span>
-        <span class="lista__disciplina">Campaña social</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-casa"/></svg></span>
-      </a></li>
-
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2023</span>
-        <span class="lista__nombre">Turno * Producto digital</span>
-        <span class="lista__disciplina">Dirección de arte</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-turno"/></svg></span>
-      </a></li>
-
-      <li><a href="proyecto-sal-de-garraf.html">
-        <span class="lista__anyo">2022</span>
-        <span class="lista__nombre">Ronda * Revista de barrio</span>
-        <span class="lista__disciplina">Editorial</span>
-        <span class="lista__mini"><svg viewBox="0 0 400 500" aria-hidden="true"><use href="#p-ronda"/></svg></span>
-      </a></li>
-    </ul>
-  </section>
-
+</section>
 </main>
-
-<!-- ==========  6 · PIE  ============================== -->
-<footer class="pie" id="contacto">
-  <a href="mailto:hola@ejemplo.com">hola@ejemplo.com</a>
-  <a href="#">@celiamuntaner</a>
-  <a href="#">LinkedIn</a>
-  <span>Barcelona, España</span>
-</footer>
-
+<footer class="site-foot"><span>© <span id="yr">2026</span> Celia Muntaner</span><a href="#top">volver arriba ↑</a></footer>
+<button class="to-top" type="button" aria-label="Volver arriba">↑</button>
 <script>
-/* Desfile: las dos columnas se mueven en sentidos opuestos
-   según la posición de la sección en la ventana. */
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Videos: play silently while visible, pause when scrolled away (like a slide being shown).
+  const vids = [...document.querySelectorAll('video.bgm')];
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      const v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(() => {}); }
+      else { v.pause(); }
+    }
+  }, { threshold: 0.35 });
+  vids.forEach(v => io.observe(v));
 
-  var seccion = document.querySelector('.desfile');
-  if (!seccion) return;
+  // Sound toggle (only on videos that have audio): one video with sound at a time.
+  document.querySelectorAll('.snd').forEach(btn => {
+    const v = btn.parentElement.querySelector('video');
+    btn.addEventListener('click', () => {
+      const on = v.muted;
+      document.querySelectorAll('.snd').forEach(b => {
+        const o = b.parentElement.querySelector('video'); o.muted = true; b.setAttribute('aria-pressed', 'false');
+        b.setAttribute('aria-label', 'Activar sonido');
+      });
+      if (on) { v.muted = false; v.play().catch(() => {}); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Silenciar'); }
+    });
+  });
 
-  var sube = seccion.querySelector('[data-desfile="sube"]');
-  var baja = seccion.querySelector('[data-desfile="baja"]');
-  var pendiente = false;
-
-  function recorrido(col) {
-    return Math.max(0, col.scrollHeight - seccion.clientHeight);
-  }
-
-  function pintar() {
-    var caja = seccion.getBoundingClientRect();
-    var total = window.innerHeight + caja.height;
-    var p = (window.innerHeight - caja.top) / total;
-    p = Math.min(1, Math.max(0, p));
-
-    sube.style.transform = 'translateY(' + (-p * recorrido(sube)) + 'px)';
-    baja.style.transform = 'translateY(' + (-(1 - p) * recorrido(baja)) + 'px)';
-    pendiente = false;
-  }
-
-  function pedir() {
-    if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); }
-  }
-
-  window.addEventListener('scroll', pedir, { passive: true });
-  window.addEventListener('resize', pedir);
-  pintar();
-})();
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // minimise / restore text cards
+  document.querySelectorAll('.fold').forEach(b => b.addEventListener('click', () => {
+    const c = b.previousElementSibling, min = !b.classList.contains('min');
+    b.classList.toggle('min', min); c.classList.toggle('is-min', min);
+    b.setAttribute('aria-expanded', String(!min)); b.setAttribute('aria-label', min ? 'Mostrar texto' : 'Minimizar texto');
+  }));
+  // fullscreen per slide
+  document.querySelectorAll('.fsb').forEach(b => b.addEventListener('click', () => {
+    const s = b.closest('.slide');
+    if (document.fullscreenElement) document.exitFullscreen(); else (s.requestFullscreen || s.webkitRequestFullscreen)?.call(s);
+  }));
+  const tt = document.querySelector('.to-top');
+  addEventListener('scroll', () => tt.classList.toggle('show', scrollY > innerHeight * .8), { passive:true });
+  tt.addEventListener('click', () => scrollTo({ top:0, behavior:'smooth' }));
 </script>
-
 </body>
 </html>
