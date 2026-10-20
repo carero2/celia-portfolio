@@ -61,7 +61,7 @@ S.append(dict(n=2, bg=PAPER, media=dict(img="images/2.jpg"), mcrop=[1420.53, 255
     T(736.64, 638.42, 550.46, 26.667, "N", "justify", 1, 0, INK, "beAgency", "exp"),
     T(734.80, 682.20, 550.46, 26.667, "N", "justify", 1, 0, INK, "oct. 2020 - mar. 2022", "exp"),
     T(736.64, 929.67, 550.46, 26.667, "B", "justify", 1, 0, INK, "descargar cv completo", "exp cv",
-      href="https://drive.google.com/file/d/1gX9Obmp7R_uWD_anFI1lg9Vw4PGQZEC0/view?usp=sharing", under=True),
+      href="celia-muntaner-cv.pdf", under=True),
     T(1644.60, 225.01, 161.95, 24, "B", "end", 1, 0, INK, "*", "star"),
     T(1477.21, 758.96, 334.79, 26.667, "L", "end", 1.12, 0, INK, "celiamuntaner@gmail.com<br>669 07 07 81<br>Barcelona", "contact2"),
 ]))
@@ -70,7 +70,7 @@ S.append(dict(n=2, bg=PAPER, media=dict(img="images/2.jpg"), mcrop=[1420.53, 255
 rows = [("001", "branding y packaging", MINT, "s4"), ("002", "evento lanzamiento", MINT, "s10"),
         ("003", "contenido generado con IA", MINT, "s14"), ("004", "campañas", MINT, "s17"),
         ("005", "creative content", MINT, "s20"), ("006", "activaciones offline", MINT, "s21"),
-        ("007", "levi’s", "#fff", "s23"), ("007", "rilastil", "#fff", "s25"), ("007", "ribs", "#fff", None)]
+        ("007", "levi’s", "#fff", "s23"), ("008", "rilastil", "#fff", "s25"), ("009", "ribs", "#fff", None)]
 lineY = [293.20, 376.72, 460.24, 543.76, 627.76, 711.61, 795.47, 879.32, 963.18]
 labY = [300.27, 383.79, 467.31, 550.83, 634.83, 718.68, 802.54, 886.39, 970.24]
 numY = [321.74, 405.26, 488.78, 572.30, 656.29, 740.15, 824.00, 907.86, 991.71]
