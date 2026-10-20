@@ -47,7 +47,7 @@ S.append(dict(n=2, bg=PAPER, media=dict(img="images/2.jpg"), mcrop=[1420.53, 255
     T(108, 108, 1343.99, 80.0045, "N", "start", .86, -.06, INK, "celia muntaner", "h-name"),
     T(108, 239.41, 550.46, 26.667, "L", "justify", 1.14, .005, INK,
       "<b>Directora creativa y de arte</b> con más de 6 años de experiencia, especializada en el sector de la cosmética y el skincare. <br><br>"
-      "Mi actual proyecto es <b>Binomial skincare</b>, una marca de dermocosmética de mesoestetic Pharme Group. Involucrada desde la fase previa al lanzamiento de la marca, liderando la dirección creativa, la identidad visual y la estrategia de la marca. Conceptualizo campañas y su desarrollo en diferentes canales (social, paid, web, offline..)<br><br>"
+      "Mi actual proyecto es <b>Binomial skincare</b>, una marca de dermocosmética de mesoestetic Pharma Group. Involucrada desde la fase previa al lanzamiento de la marca, liderando la dirección creativa, la identidad visual y la estrategia de la marca. Conceptualizo campañas y su desarrollo en diferentes canales (social, paid, web, offline..)<br><br>"
       "Además, desarrollo funciones de Brand Manager, participo en la implementación de estrategias de marca, desde el rendimiento de ventas, los canales de distribución y la comunicación directa con agencias y proveedores.<br><br>"
       "Poseo experiencia previa en agencia que me aportó una visión transversal del sector creativo y una excelente capacidad de respuesta ante grandes ritmos de trabajo.", "bio"),
     T(736.64, 239.41, 550.46, 26.667, "B", "justify", 1, 0, INK, "experiencia", "exp"),
@@ -80,8 +80,8 @@ S.append(dict(n=3, bg=INK, rows=[dict(num=r[0], lab=r[1], col=r[2], href=r[3], l
 # 4 — Binomial intro
 d4 = dict(fs=26.667, wt="N", al="justify", lh=1.17, ls=0, col=INK)
 S.append(dict(n=4, bg="#ffffff", media=dict(img="images/4.jpg"), els=[
-    T(64.63, 383.38, 382.46, 26.667, "N", "justify", 1.17, 0, INK, "Desde mesoestetic Pharma group® nace la necesidad de crear una marca de skincare enfocada a la Gen Z. Junto a la agencia Morillas, se define y desarrolla toda la estrategia, con un enfoque 100% digital y trasgesor."),
-    T(503.54, 383.38, 326.02, 26.667, "N", "justify", 1.17, 0, INK, "Al incorporar al equipo interno dedicado a la marca (momento en el que me incorporé) se hace un traspaso de proyecto y se centraliza en el nuevo team."),
+    T(64.63, 383.38, 382.46, 26.667, "N", "justify", 1.17, 0, INK, "Desde mesoestetic Pharma group® nace la necesidad de crear una marca de skincare enfocada a la Gen Z. Junto a la agencia Morillas, se define y desarrolla toda la estrategia, con un enfoque 100% digital y transgresor."),
+    T(503.54, 383.38, 326.02, 26.667, "N", "justify", 1.17, 0, INK, "Al crearse el equipo interno dedicado a la marca (momento en el que me incorporé) se hace un traspaso de proyecto y se centraliza en el nuevo team."),
     T(64.63, 701.54, 764.92, 26.667, "N", "justify", 1.17, 0, INK, "Desde entonces, se ha desarrollado la marca desde el equipo, ajustando la estrategia y elaborando planes de acción para la optimización de recursos y la rentabilidad de esta."),
     T(64.63, 864.71, 764.92, 26.667, "N", "justify", 1.17, 0, INK, "Mi papel en el equipo pasó de ser diseñadora gráfica a liderar toda la parte conceptual y creativa de la marca, definiendo su identidad y dotándola de contenido para su crecimiento y expansión en el mercado, manteniendo su esencia y su razón de ser como marca."),
 ]))
@@ -109,17 +109,17 @@ S.append(dict(n=9, bg=INK, media=dict(img="images/9.jpg"), els=[
               "tbb agency", "Abril-Septiembre 2024", tx=1091.69, ty=120.94, dy=184.19, my=266.52, rx=1445.96, ttw=613.66)]))
 
 S.append(dict(n=10, bg=PAPER, media=dict(img="images/10.jpg"), els=[
-    mint_card(1069.25, 658.67, 781.70, 378.12, "(005) Evento lanzamineto",
-              "Construcción de pop-up experiencial en Madrid, con un espacio dediacado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.",
+    mint_card(1069.25, 658.67, 781.70, 378.12, "(005) Evento lanzamiento",
+              "Construcción de pop-up experiencial en Madrid, con un espacio dedicado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.",
               "Pelonio", "Octubre 2024", tx=1101.26, ty=707.49, dy=769.27, my=979.99, rx=1455.53)]))
 
 S.append(dict(n=11, bg=PAPER, media=dict(video="media/11.mp4", poster="media/11-poster.jpg", sound=True), els=[]))
-S.append(dict(n=12, bg=PAPER, media=dict(video="media/12.mp4"), els=[]))
-S.append(dict(n=13, bg=PAPER, media=dict(video="media/13.mp4"), els=[]))
+S.append(dict(n=12, bg=PAPER, media=dict(video="media/12.mp4", poster="media/12-poster.jpg"), els=[]))
+S.append(dict(n=13, bg=PAPER, media=dict(video="media/13.mp4", poster="media/13-poster.jpg"), els=[]))
 
 S.append(dict(n=14, bg=PAPER, media=dict(img="images/14.jpg"), els=[
     mint_card(1079.94, 350.68, 781.70, 303.42, "(006) AI generated content",
-              "Creación de contenido con IA y automatizacione sen la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.",
+              "Creación de contenido con IA y automatizaciones en la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.",
               "Nano Banana y Figma", "2026", tx=1111.95, ty=381.91, dy=(1121.69, 460.17), my=585.93, rx=1475.96, ttw=650)]))
 # metas on slide 14 start at 1121.69 (Canva), fix:
 S[-1]["els"][0]["kids"][2]["x"] = 1121.69
@@ -129,7 +129,7 @@ S.append(dict(n=16, bg=PAPER, media=dict(img="images/16.jpg"), els=[]))
 
 S.append(dict(n=17, bg=PAPER, media=dict(video="media/17.mp4", poster="media/17-poster.jpg", sound=True), els=[
     mint_card(1066.88, 59.69, 781.70, 354.30, "(007) Campaña “El mejor polvo de tu vida”",
-              "Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en, el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizaco) y offline (wildposting)",
+              "Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizado) y offline (wildposting)",
               "Neven productora", "Marzo 2025", tx=1098.90, ty=90.92, dy=(1101.26, 148.09), my=354.43, rx=1455.53, ttw=650)]))
 S[-1]["els"][0]["kids"][2]["x"] = 1101.26
 
@@ -151,7 +151,7 @@ S.append(dict(n=22, bg=PAPER, media=dict(img="images/22.jpg"), els=[]))
 S.append(dict(n=23, bg=PAPER, media=dict(embed="https://player.vimeo.com/video/760811572?title=0&byline=0&portrait=0&dnt=1",
                                          box=[0, 0, 1917, 1080], title="Levi’s - Social Live Shopping"), els=[
     dark_card(108, 108, 547.54, 653.90, 148.03, "(010) Levi’s", "Social Live Shopping",
-              "Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la carteleria y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.",
+              "Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la cartelería y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.",
               254.85, "beAgency", "2021", 688.45, 269.14)]))
 
 S.append(dict(n=24, bg=PAPER, media=dict(img="images/24.jpg"), els=[
@@ -159,13 +159,13 @@ S.append(dict(n=24, bg=PAPER, media=dict(img="images/24.jpg"), els=[
               "Diseño y animación de creatividades para los diferentes canales nacionales de la marca.",
               231.78, "beAgency", "2023", 367.64, 269.14)]))
 
-rilastil = "Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content  con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias."
+rilastil = "Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias."
 S.append(dict(n=25, bg=PAPER, media=dict(embed="https://www.youtube-nocookie.com/embed/CMqaot85DZw?rel=0&modestbranding=1",
                                          box=[0, 0.84, 1920, 1079.16], title="Rilastil Official skin care & sun protection of FC Barcelona Women"), els=[
     dark_card(108, 84.93, 547.54, 502.94, 148.03, "(011) Rilastil", "Patrocinio Barça Femenino",
               rilastil, 231.78, "beAgency - Multiplica", "2023", 508.67, 269.14)]))
 
-S.append(dict(n=26, bg=PAPER, media=dict(video="media/27.mp4"), els=[
+S.append(dict(n=26, bg=PAPER, media=dict(video="media/27.mp4", poster="media/27-poster.jpg"), els=[
     dark_card(35.41, 288.53, 547.54, 502.94, 75.44, "(011) Rilastil", "Patrocinio Barça Femenino",
               rilastil, 435.38, "beAgency - Multiplica", "2023", 712.27, 196.56)]))
 
@@ -244,7 +244,14 @@ print("ok", len(S), "slides")
 # Each pair: exact Spanish text -> English text. Edit here, then run: python build.py
 EN = [
   ('<html lang="es">', '<html lang="en">'),
-  ('content="Portfolio de Celia Muntaner, creative and design brand manager. Barcelona."', 'content="Portfolio of Celia Muntaner, creative and design brand manager. Barcelona."'),
+  ('content="Portfolio de Celia Muntaner, directora creativa y de arte especializada en branding de cosmética y skincare. Barcelona."',
+   'content="Portfolio of Celia Muntaner, creative and art director specialised in cosmetics and skincare branding. Barcelona."'),
+  ('<link rel="canonical" href="https://carero2.github.io/celia-portfolio/">', '<link rel="canonical" href="https://carero2.github.io/celia-portfolio/en.html">'),
+  ('<meta property="og:locale" content="es_ES">', '<meta property="og:locale" content="en_GB">'),
+  ('<meta property="og:url" content="https://carero2.github.io/celia-portfolio/">', '<meta property="og:url" content="https://carero2.github.io/celia-portfolio/en.html">'),
+  ('<meta property="og:description" content="Directora creativa y de arte especializada en branding de cosmética y skincare. Barcelona.">',
+   '<meta property="og:description" content="Creative and art director specialised in cosmetics and skincare branding. Barcelona.">'),
+  ('content="celia muntaner — directora creativa y de arte"', 'content="celia muntaner — creative and art director"'),
   ('<a href="#sobre-mi">sobre mí</a><a href="#s3">proyectos</a><a href="#contacto">contacto</a>',
    '<a href="#sobre-mi">about</a><a href="#s3">projects</a><a href="#contacto">contact</a>'),
   ('<a class="lang" href="en.html" lang="en">EN</a>', '<a class="lang" href="index.html" lang="es">ES</a>'),
@@ -275,9 +282,9 @@ EN = [
   ('>branding y packaging<', '>branding &amp; packaging<'), ('>evento lanzamiento<', '>launch event<'),
   ('>contenido generado con IA<', '>AI-generated content<'), ('>campañas<', '>campaigns<'), ('>activaciones offline<', '>offline activations<'),
   # slide 4
-  ('Desde mesoestetic Pharma group® nace la necesidad de crear una marca de skincare enfocada a la Gen Z. Junto a la agencia Morillas, se define y desarrolla toda la estrategia, con un enfoque 100% digital y trasgesor.',
+  ('Desde mesoestetic Pharma group® nace la necesidad de crear una marca de skincare enfocada a la Gen Z. Junto a la agencia Morillas, se define y desarrolla toda la estrategia, con un enfoque 100% digital y transgresor.',
    'mesoestetic Pharma group® saw the need to create a skincare brand focused on Gen Z. Together with the agency Morillas, the whole strategy was defined and developed, with a 100% digital and transgressive approach.'),
-  ('Al incorporar al equipo interno dedicado a la marca (momento en el que me incorporé) se hace un traspaso de proyecto y se centraliza en el nuevo team.',
+  ('Al crearse el equipo interno dedicado a la marca (momento en el que me incorporé) se hace un traspaso de proyecto y se centraliza en el nuevo team.',
    'When the in-house team dedicated to the brand was created (when I joined), the project was handed over and centralised in the new team.'),
   ('Desde entonces, se ha desarrollado la marca desde el equipo, ajustando la estrategia y elaborando planes de acción para la optimización de recursos y la rentabilidad de esta.',
    'Since then, the brand has been developed by the team, adjusting the strategy and drawing up action plans to optimise resources and profitability.'),
@@ -294,14 +301,14 @@ EN = [
   ('(004) Página web y contenidos digitales', '(004) Website and digital content'),
   ('Diseño de e-commerce junto con tbb agency. Conceptualización de UX y look and feel del website.',
    'E-commerce design together with tbb agency. UX concept and look and feel of the website.'),
-  ('(005) Evento lanzamineto', '(005) Launch event'),
-  ('Construcción de pop-up experiencial en Madrid, con un espacio dediacado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.',
+  ('(005) Evento lanzamiento', '(005) Launch event'),
+  ('Construcción de pop-up experiencial en Madrid, con un espacio dedicado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.',
    'An experiential pop-up in Madrid, with a space dedicated to skincare to try the products and live the brand experience, with several activations and activities. <br>Communication campaign for the event, with a digital call-out and wildposting around the venue.'),
-  ('Creación de contenido con IA y automatizacione sen la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.',
+  ('Creación de contenido con IA y automatizaciones en la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.',
    'AI content creation and automation for producing Paid Media assets at scale with Figma. Images used on the website and digital channels.'),
   ('Nano Banana y Figma', 'Nano Banana and Figma'),
   ('(007) Campaña “El mejor polvo de tu vida”', '(007) Campaign “El mejor polvo de tu vida”'),
-  ('Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en, el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizaco) y offline (wildposting)',
+  ('Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizado) y offline (wildposting)',
    'Concept, development and execution of the campaign for Power Powder, our powder facial cleanser, “the best powder of your life”. We played with the Spanish double meaning to spark curiosity and increase reach. Online activations (microsite and localised paid media) and offline (wildposting).'),
   ('Neven productora', 'Neven (production company)'),
   ('Creación de contenido inhouse, con enfoque más científico y educativo o con un enfoque más de lifestyle y de estilo de vida, siguiendo los trends y las últimas novedades en social media.',
@@ -310,12 +317,12 @@ EN = [
   ('Coordinación de acciones en entornos offline como samplings y markets. También activaciones cobrandeadas con marcas afines del sector health y fitness.',
    'Coordination of offline actions such as samplings and markets, plus co-branded activations with like-minded health and fitness brands.'),
   ('Diferentes proveedores', 'Various suppliers'),
-  ('Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la carteleria y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.',
+  ('Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la cartelería y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.',
    'Campaign for the brand’s first live-stream shopping event. Concept and format of the stream, with different challenges and activations. <br><br>Design of on-screen graphics, signage and animations for the stream, as well as social media creatives and collaboration with influencers @gigi_vives, @andreiinflu and @monismurf.'),
   ('Diseño y animación de creatividades para los diferentes canales nacionales de la marca.',
    'Design and animation of creatives for the brand’s national channels.'),
   ('Patrocinio Barça Femenino', 'Barça Women sponsorship'),
-  ('Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content  con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias.',
+  ('Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias.',
    'Campaign with FC Barcelona Women as skincare sponsor. Concept and shoot of the video spot and social media content with the players.<br><br>Social media strategy and content design for the brand’s own channels.'),
 ]
 en = page
