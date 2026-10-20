@@ -67,10 +67,10 @@ S.append(dict(n=2, bg=PAPER, media=dict(img="images/2.jpg"), mcrop=[1420.53, 255
 ]))
 
 # 3 — index (rows = line + number + label, exact Canva coordinates)
-rows = [("001", "branding y packaging", MINT, "s4"), ("002", "evento lanzamiento", MINT, "s10"),
-        ("003", "contenido generado con IA", MINT, "s14"), ("004", "campañas", MINT, "s17"),
-        ("005", "creative content", MINT, "s20"), ("006", "activaciones offline", MINT, "s21"),
-        ("007", "levi’s", "#fff", "s23"), ("008", "rilastil", "#fff", "s25"), ("009", "ribs", "#fff", None)]
+rows = [("01", "branding y packaging", MINT, "s4"), ("02", "evento lanzamiento", MINT, "s10"),
+        ("03", "contenido generado con IA", MINT, "s14"), ("04", "campañas", MINT, "s17"),
+        ("05", "creative content", MINT, "s20"), ("06", "activaciones offline", MINT, "s21"),
+        ("07", "levi’s", "#fff", "s23"), ("08", "rilastil", "#fff", "s25")]
 lineY = [293.20, 376.72, 460.24, 543.76, 627.76, 711.61, 795.47, 879.32, 963.18]
 labY = [300.27, 383.79, 467.31, 550.83, 634.83, 718.68, 802.54, 886.39, 970.24]
 numY = [321.74, 405.26, 488.78, 572.30, 656.29, 740.15, 824.00, 907.86, 991.71]
@@ -87,29 +87,29 @@ S.append(dict(n=4, bg="#ffffff", media=dict(img="images/4.jpg"), els=[
 ]))
 
 S.append(dict(n=5, bg=INK, media=dict(video="media/5.mp4", poster="media/5-poster.jpg", sound=True), els=[
-    mint_card(1030.30, 648, 781.70, 324, "(001) Video Manifesto",
+    mint_card(1030.30, 648, 781.70, 324, "(01.1) Video Manifesto",
               "Video presentación de la marca y el portfolio de productos, con un estilo visual, inspirado en lo que conecta con la Generación Z, refleja en cada detalle la misión de Binomial: cuidado de la piel simple y efectivo.",
               "Agencia Morillas", "Abril-Septiembre 2024", tx=1062.32, ty=679.23, dy=742.48, my=916.29, rx=1416.59)]))
 
 S.append(dict(n=6, bg=PAPER, media=dict(img="images/6.jpg"), els=[
-    mint_card(64.08, 94.01, 763.05, 264.78, "(002) Packaging",
+    mint_card(64.08, 94.01, 763.05, 264.78, "(01.2) Packaging",
               "Conceptualización y desarrollo de los AAFF de primarios y secundarios de toda la gama. Contacto con proveedores y seguimiento de la fabricación.",
               "Orriols Packaging", "Abril-Septiembre 2024", tx=96.09, ty=125.23, dy=178.62, my=292.55, rx=450.36)]))
 
 S.append(dict(n=7, bg=INK, media=dict(img="media/7.gif"), els=[
-    mint_card(151.69, 748.67, 781.70, 268.73, "(003) Shooting",
+    mint_card(151.69, 748.67, 781.70, 268.73, "(01.3) Shooting",
               "Dirección conceptual y de arte del shooting inicial de marca, incluyendo bodegón de producto, interacción con modelo y foco en textura de producto.",
               "Agencia Morillas", "Abril-Septiembre 2024", tx=183.71, ty=779.90, dy=843.15, my=951.48, rx=537.98)]))
 
 S.append(dict(n=8, bg=INK, media=dict(img="images/8.jpg"), els=[]))
 
 S.append(dict(n=9, bg=INK, media=dict(img="images/9.jpg"), els=[
-    mint_card(1059.68, 89.71, 781.70, 245.08, "(004) Página web y contenidos digitales",
+    mint_card(1059.68, 89.71, 781.70, 245.08, "(01.4) Página web y contenidos digitales",
               "Diseño de e-commerce junto con tbb agency. Conceptualización de UX y look and feel del website.",
               "tbb agency", "Abril-Septiembre 2024", tx=1091.69, ty=120.94, dy=184.19, my=266.52, rx=1445.96, ttw=613.66)]))
 
 S.append(dict(n=10, bg=PAPER, media=dict(img="images/10.jpg"), els=[
-    mint_card(1069.25, 658.67, 781.70, 378.12, "(005) Evento lanzamiento",
+    mint_card(1069.25, 658.67, 781.70, 378.12, "(02.1) Evento lanzamiento",
               "Construcción de pop-up experiencial en Madrid, con un espacio dedicado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.",
               "Pelonio", "Octubre 2024", tx=1101.26, ty=707.49, dy=769.27, my=979.99, rx=1455.53)]))
 
@@ -118,7 +118,7 @@ S.append(dict(n=12, bg=PAPER, media=dict(video="media/12.mp4", poster="media/12-
 S.append(dict(n=13, bg=PAPER, media=dict(video="media/13.mp4", poster="media/13-poster.jpg"), els=[]))
 
 S.append(dict(n=14, bg=PAPER, media=dict(img="images/14.jpg"), els=[
-    mint_card(1079.94, 350.68, 781.70, 303.42, "(006) AI generated content",
+    mint_card(1079.94, 350.68, 781.70, 303.42, "(03.1) AI generated content",
               "Creación de contenido con IA y automatizaciones en la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.",
               "Nano Banana y Figma", "2026", tx=1111.95, ty=381.91, dy=(1121.69, 460.17), my=585.93, rx=1475.96, ttw=650)]))
 # metas on slide 14 start at 1121.69 (Canva), fix:
@@ -128,7 +128,7 @@ S.append(dict(n=15, bg=PAPER, media=dict(img="images/15.jpg"), els=[]))
 S.append(dict(n=16, bg=PAPER, media=dict(img="images/16.jpg"), els=[]))
 
 S.append(dict(n=17, bg=PAPER, media=dict(video="media/17.mp4", poster="media/17-poster.jpg", sound=True), els=[
-    mint_card(1066.88, 59.69, 781.70, 354.30, "(007) Campaña “El mejor polvo de tu vida”",
+    mint_card(1066.88, 59.69, 781.70, 354.30, "(04.1) Campaña “El mejor polvo de tu vida”",
               "Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizado) y offline (wildposting)",
               "Neven productora", "Marzo 2025", tx=1098.90, ty=90.92, dy=(1101.26, 148.09), my=354.43, rx=1455.53, ttw=650)]))
 S[-1]["els"][0]["kids"][2]["x"] = 1101.26
@@ -137,12 +137,12 @@ S.append(dict(n=18, bg=PAPER, media=dict(img="images/18.jpg"), els=[]))
 S.append(dict(n=19, bg=PAPER, media=dict(video="media/19.mp4", poster="media/19-poster.jpg"), els=[]))
 
 S.append(dict(n=20, bg=PAPER, media=dict(video="media/20.mp4", poster="media/20-poster.jpg"), els=[
-    mint_card(74.89, 75.93, 774.10, 266.77, "(008) Digital content",
+    mint_card(74.89, 75.93, 774.10, 266.77, "(05.1) Digital content",
               "Creación de contenido inhouse, con enfoque más científico y educativo o con un enfoque más de lifestyle y de estilo de vida, siguiendo los trends y las últimas novedades en social media.",
               tx=114.92, ty=112.40, dy=186.70, dlh=1.12, ttw=412.01)]))
 
 S.append(dict(n=21, bg=PAPER, media=dict(img="images/21.jpg"), els=[
-    mint_card(528.01, 71.54, 774.10, 308.56, "(009) Activaciones offline",
+    mint_card(528.01, 71.54, 774.10, 308.56, "(06.1) Activaciones offline",
               "Coordinación de acciones en entornos offline como samplings y markets. También activaciones cobrandeadas con marcas afines del sector health y fitness.",
               "Diferentes proveedores", "2026", tx=568.04, ty=108, dy=182.30, my=308.06, rx=922.31, ttw=412.01)]))
 
@@ -150,23 +150,23 @@ S.append(dict(n=22, bg=PAPER, media=dict(img="images/22.jpg"), els=[]))
 
 S.append(dict(n=23, bg=PAPER, media=dict(embed="https://player.vimeo.com/video/760811572?title=0&byline=0&portrait=0&dnt=1",
                                          box=[0, 0, 1917, 1080], title="Levi’s - Social Live Shopping"), els=[
-    dark_card(108, 108, 547.54, 653.90, 148.03, "(010) Levi’s", "Social Live Shopping",
+    dark_card(108, 108, 547.54, 653.90, 148.03, "(07.1) Levi’s", "Social Live Shopping",
               "Campaña para el primer directo de compra online en streaming de la marca. Creación y conceptualización de la dinámica del streaming, con diferentes challenges y activaciones. <br><br>Diseño de sobreimpresiones junto a la cartelería y animaciones del streaming así como las creatividades para social media y colaboración con las influencers @gigi_vives, @andreiinflu y @monismurf.",
               254.85, "beAgency", "2021", 688.45, 269.14)]))
 
 S.append(dict(n=24, bg=PAPER, media=dict(img="images/24.jpg"), els=[
-    dark_card(108, 84.93, 547.54, 361.35, 148.03, "(010) Levi’s", "Social Media",
+    dark_card(108, 84.93, 547.54, 361.35, 148.03, "(07.2) Levi’s", "Social Media",
               "Diseño y animación de creatividades para los diferentes canales nacionales de la marca.",
               231.78, "beAgency", "2023", 367.64, 269.14)]))
 
 rilastil = "Campaña junto al FCB femenino como sponsor de skincare. Conceptualización y grabación de video spot y social media content con las jugadoras.<br><br>Estrategia de social media y diseño del contenido para redes propias."
 S.append(dict(n=25, bg=PAPER, media=dict(embed="https://www.youtube-nocookie.com/embed/CMqaot85DZw?rel=0&modestbranding=1",
                                          box=[0, 0.84, 1920, 1079.16], title="Rilastil Official skin care & sun protection of FC Barcelona Women"), els=[
-    dark_card(108, 84.93, 547.54, 502.94, 148.03, "(011) Rilastil", "Patrocinio Barça Femenino",
+    dark_card(108, 84.93, 547.54, 502.94, 148.03, "(08.1) Rilastil", "Patrocinio Barça Femenino",
               rilastil, 231.78, "beAgency - Multiplica", "2023", 508.67, 269.14)]))
 
 S.append(dict(n=26, bg=PAPER, media=dict(video="media/27.mp4", poster="media/27-poster.jpg"), els=[
-    dark_card(35.41, 288.53, 547.54, 502.94, 75.44, "(011) Rilastil", "Patrocinio Barça Femenino",
+    dark_card(35.41, 288.53, 547.54, 502.94, 75.44, "(08.1) Rilastil", "Patrocinio Barça Femenino",
               rilastil, 435.38, "beAgency - Multiplica", "2023", 712.27, 196.56)]))
 
 S.append(dict(n=27, bg=INK, els=[
@@ -298,22 +298,22 @@ EN = [
    'Concept and final artwork for the primary and secondary packaging of the whole range. Supplier contact and production follow-up.'),
   ('Dirección conceptual y de arte del shooting inicial de marca, incluyendo bodegón de producto, interacción con modelo y foco en textura de producto.',
    'Concept and art direction of the brand’s launch photo shoot, including product still life, model interaction and a focus on product texture.'),
-  ('(004) Página web y contenidos digitales', '(004) Website and digital content'),
+  ('(01.4) Página web y contenidos digitales', '(01.4) Website and digital content'),
   ('Diseño de e-commerce junto con tbb agency. Conceptualización de UX y look and feel del website.',
    'E-commerce design together with tbb agency. UX concept and look and feel of the website.'),
-  ('(005) Evento lanzamiento', '(005) Launch event'),
+  ('(02.1) Evento lanzamiento', '(02.1) Launch event'),
   ('Construcción de pop-up experiencial en Madrid, con un espacio dedicado al skincare donde probar los productos y vivir la experiencia de la marca. Con diversas activaciones y actividades. <br>Campaña de comunicación del evento, con convocatoria digital y también wildposting en las proximidades del lugar del evento.',
    'An experiential pop-up in Madrid, with a space dedicated to skincare to try the products and live the brand experience, with several activations and activities. <br>Communication campaign for the event, with a digital call-out and wildposting around the venue.'),
   ('Creación de contenido con IA y automatizaciones en la creación de piezas masivas de Paid Media con Figma. Utilización de fotografías en web y canales digitales.',
    'AI content creation and automation for producing Paid Media assets at scale with Figma. Images used on the website and digital channels.'),
   ('Nano Banana y Figma', 'Nano Banana and Figma'),
-  ('(007) Campaña “El mejor polvo de tu vida”', '(007) Campaign “El mejor polvo de tu vida”'),
+  ('(04.1) Campaña “El mejor polvo de tu vida”', '(04.1) Campaign “El mejor polvo de tu vida”'),
   ('Conceptualización, desarrollo y ejecución de la campaña de Power Powder, nuestro limpiador facial en polvo que se convierte en el mejor polvo de tu vida. Jugamos con el doble sentido para generar curiosidad y aumentar el alcance de la campaña. Activaciones online (microsite y paid media localizado) y offline (wildposting)',
    'Concept, development and execution of the campaign for Power Powder, our powder facial cleanser, “the best powder of your life”. We played with the Spanish double meaning to spark curiosity and increase reach. Online activations (microsite and localised paid media) and offline (wildposting).'),
   ('Neven productora', 'Neven (production company)'),
   ('Creación de contenido inhouse, con enfoque más científico y educativo o con un enfoque más de lifestyle y de estilo de vida, siguiendo los trends y las últimas novedades en social media.',
    'In-house content creation, with either a more scientific and educational approach or a lifestyle approach, following trends and the latest in social media.'),
-  ('(009) Activaciones offline', '(009) Offline activations'),
+  ('(06.1) Activaciones offline', '(06.1) Offline activations'),
   ('Coordinación de acciones en entornos offline como samplings y markets. También activaciones cobrandeadas con marcas afines del sector health y fitness.',
    'Coordination of offline actions such as samplings and markets, plus co-branded activations with like-minded health and fitness brands.'),
   ('Diferentes proveedores', 'Various suppliers'),
