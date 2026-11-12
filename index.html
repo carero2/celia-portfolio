@@ -109,6 +109,19 @@
   .slide:fullscreen .stage { width:min(100vw, calc(100vh * 16 / 9)); }
 
 
+  /* ---- scroll snap: one wheel "page" = one panel (desktop only) ---- */
+  @media (min-width:900px) and (min-height:500px) {
+    html { scroll-snap-type:y mandatory; }
+    .hero, .about, .slide, .contact { scroll-snap-align:start; scroll-snap-stop:always; }
+    .site-foot { scroll-snap-align:end; }
+    /* slides never taller than the window: letterboxed 16:9, background fills the sides */
+    .stage { width:min(100%, calc(100svh * 16 / 9)); }
+    .slide:fullscreen .stage { width:min(100vw, calc(100vh * 16 / 9)); }
+    /* about + contact fill exactly one screen, content centred */
+    .about, .contact { min-height:100svh; display:flex; flex-direction:column; justify-content:center; }
+    html .about { padding-block:clamp(56px,8svh,96px); }
+  }
+
   /* ---- restored website top / about / contact (first version) ---- */
   .wrap { max-width:1440px; margin:0 auto; padding:0 clamp(16px,4vw,56px); }
   .label { font-size:13px; font-weight:600; margin:0 0 20px; }
